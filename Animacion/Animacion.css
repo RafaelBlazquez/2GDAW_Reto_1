@@ -1,0 +1,126 @@
+*{
+    height: 100%;
+    width: 100%;
+    margin-top: 0%;
+    margin-left: 0%;
+}
+
+div#animacion{
+    height: 100%;
+    width: 50%;
+    background-color: blue; 
+    position: absolute;
+}
+div#base{
+    width: 500px;
+    height: 500px;
+    margin-left:25%;
+    margin-top:12.5%;
+    background-color: black;
+    position: relative;
+}
+table{
+    background-color: gray;
+}
+div .circulo{
+        width: 100px;
+        height: 100px;
+        -moz-border-radius: 50%;
+        -webkit-border-radius: 50%;
+        border-radius: 50%;
+        background: rgb(59, 58, 58);
+        position: relative;
+}
+div#espacio{
+    height: 50px;
+}
+div#valvula{
+    height: 30px;
+    width: 30px;
+    background-color: black;
+    position: inherit;
+    z-index: 3;
+    animation-name: mirarColor,uno-negro,mirarColor,dos-negro,mirarColor,tres-negro,mirarColor,cuatro-negro,mirarColor,cinco-negro;
+    animation-duration: 3s,10s,3s,10s,3s,10s,3s,10s,3s,10s;
+    animation-delay: 0s,3s,13s,16s,26s,29s,39s,42s,52s,55s;
+}
+@keyframes mirarColor{
+    from{
+        margin-top:16.1%;
+        margin-left:69.4%;
+    }
+    to{
+        margin-top:16.1%;
+        margin-left:38.9%;
+    }
+}
+@keyframes uno-negro{
+    from{
+        margin-top:16.1%;
+        margin-left:38.9%;
+    }
+    50%{
+        margin-top:72.1%;
+        margin-left:28.8%;
+    }
+    to{
+        margin-top:16.1%;
+        margin-left:69.4%;
+    }
+}
+@keyframes dos-negro{
+    from{
+        margin-top:16.1%;
+        margin-left:38.9%;
+    }
+    50%{
+        margin-top:62%;
+        margin-left:28.8%;
+    }
+    to{
+        margin-top:16.1%;
+        margin-left:69.4%;
+    }
+}
+@keyframes tres-negro{
+    from{
+        margin-top:16.1%;
+        margin-left:38.9%;
+    }
+    50%{
+        margin-top:62%;
+        margin-left:28.8%;
+    }
+    to{
+        margin-top:51.9%;
+        margin-left:69.4%;
+    }
+}
+@keyframes cuatro-negro{
+    from{
+        margin-top:16.1%;
+        margin-left:38.9%;
+    }
+    50%{
+        margin-top:41.8%;
+        margin-left:28.8%;
+    }
+    to{
+        margin-top:16.1%;
+        margin-left:69.4%;
+    }
+}
+@keyframes cinco-negro{
+    from{
+        margin-top:16.1%;
+        margin-left:38.9%;
+    }
+    50%{
+        margin-top:31.7%;
+        margin-left:28.8%;
+    }
+    to{
+        margin-top:16.1%;
+        margin-left:69.4%;
+    }
+}
