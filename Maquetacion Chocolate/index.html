@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>index</title>
     <link rel="stylesheet" href="./styles.css">
+    <link rel="stylesheet" media="screen and (max-width: 400px)" href="styleSmall.css">
     <script src="./reto1.js"></script>
     <!--SCRIPTS GRAFICOS-->
     <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
@@ -37,8 +38,8 @@
           var chart = new google.visualization.ColumnChart(document.getElementById("columnchart_values"));
           chart.draw(view, options);
       }
-      </script>
-       <script type="text/javascript">
+    </script>
+    <script type="text/javascript">
         google.charts.load("current", {packages:['corechart']});
         google.charts.setOnLoadCallback(drawChart);
         function drawChart() {
@@ -66,10 +67,11 @@
           var chart = new google.visualization.ColumnChart(document.getElementById("hiddeninfo"));
           chart.draw(view, options);
       }
-      </script>
+    </script>
 </head>
 <body>
     <header>
+        <img src="logo.png" id="imglogo"/>
        <p>Chocolates Willy Wonka</p>
     </header>
 

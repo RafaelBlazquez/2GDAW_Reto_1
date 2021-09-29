@@ -1,0 +1,67 @@
+body {
+    margin: 0,0;
+    width: 100%;
+    overflow-y: scroll;
+    box-sizing: border-box;
+}
+
+header {
+    overflow: auto;
+    height: 12%;
+}
+
+header p {
+    font-size: 1.5em;
+    margin-left: 30%;
+}
+
+#mainBotones {
+    display: none;
+}
+
+footer a{
+    font-size: .5em;
+}
+
+footer img{
+    height: 100%;
+}
+
+/* contenido */
+#left {
+    padding:20px 0px;
+    width: 100%;
+    float: none;
+}
+
+#right {
+    width: 100%;
+    float: none;
+}
+
+.info {
+    margin-top: 0px;
+}
+
+.info2 {
+    margin-top: 0px;
+}
+
+/* tabla */
+.styled-table {
+    font-size: 0.5em;
+}
+
+.styled-table th,.styled-table td {
+    padding: 10px 13px;
+}
+
+/* grafico */
+
+#columnchart_values{
+    margin-top: 320px;
+}
+
+#hiddeninfo{
+    margin-top: 350px;
+}
