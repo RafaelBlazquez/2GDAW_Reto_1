@@ -65,4 +65,5 @@ function cambiarColorNegro(){
 function primerblanco(){
   valvula.style.animationName ='uno-blanco';
   valvula.style.animationDuration  ='10s';
+  console.log(hola);
 }
