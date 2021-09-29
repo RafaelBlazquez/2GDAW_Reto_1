@@ -15,112 +15,232 @@ div#base{
     width: 500px;
     height: 500px;
     margin-left:25%;
-    margin-top:12.5%;
-    background-color: black;
-    position: relative;
-}
-table{
-    background-color: gray;
+    margin-top:25%;
+    background-color: yellow;
+    overflow-y: auto;
+    overflow-x: auto;
+    position: inherit;
 }
 div .circulo{
-        width: 100px;
-        height: 100px;
+        width: 15%;
+        height: 15%;
         -moz-border-radius: 50%;
         -webkit-border-radius: 50%;
         border-radius: 50%;
-        background: rgb(59, 58, 58);
-        position: relative;
+        background: rgb(59, 58, 58);     
+        float: left;
+        clear: left;
+        position: inherit;
 }
-div#espacio{
-    height: 50px;
+div .cinco{
+    margin-left: 2%;
 }
+div .cuatro{
+    margin-left: 22%;
+}
+div .tres{
+    margin-left: 42%;
+}
+div .dos{
+    margin-left: 62%;
+}
+div .uno{
+    margin-left: 82%;
+}
+
+div .doscinco{
+   margin-top: 16.5%;
+}
+div .doscuatro{
+    margin-top: 33%;
+}
+div .dostres{
+    margin-top: 49.5%;
+}
+div .dosdos{
+    margin-top: 66%;
+}
+div .dosuno{
+    margin-top: 82.5%;
+}
+div#sensor{
+    float: left;
+    margin-left: 22%;
+    clear: left;
+    position: inherit;
+}
+div#piezas{
+    float: left;
+    margin-left: 82%;
+    clear: right;
+    position: inherit;
+    
+}
+
 div#valvula{
-    height: 30px;
-    width: 30px;
+    height: 5%;
+    width: 5%;
     background-color: black;
     position: inherit;
     z-index: 3;
-    animation-name: mirarColor,uno-negro,mirarColor,dos-negro,mirarColor,tres-negro,mirarColor,cuatro-negro,mirarColor,cinco-negro;
-    animation-duration: 3s,10s,3s,10s,3s,10s,3s,10s,3s,10s;
-    animation-delay: 0s,3s,13s,16s,26s,29s,39s,42s,52s,55s;
+   
 }
 @keyframes mirarColor{
     from{
-        margin-top:16.1%;
-        margin-left:69.4%;
+        margin-top:5%;
+        margin-left:87%;
     }
     to{
-        margin-top:16.1%;
-        margin-left:38.9%;
+        margin-top:5%;
+        margin-left:27%;
     }
 }
 @keyframes uno-negro{
     from{
-        margin-top:16.1%;
-        margin-left:38.9%;
+        margin-top:5%;
+        margin-left:27%;
     }
     50%{
-        margin-top:72.1%;
-        margin-left:28.8%;
+        margin-top:87.5%;
+        margin-left:7%;
     }
     to{
-        margin-top:16.1%;
-        margin-left:69.4%;
+        margin-top:5%;
+        margin-left:87%;
     }
 }
 @keyframes dos-negro{
     from{
-        margin-top:16.1%;
-        margin-left:38.9%;
+        margin-top:5%;
+        margin-left:27%;
     }
     50%{
-        margin-top:62%;
-        margin-left:28.8%;
+        margin-top:71%;
+        margin-left:7%;
     }
     to{
-        margin-top:16.1%;
-        margin-left:69.4%;
+        margin-top:5%;
+        margin-left:87%;
     }
 }
 @keyframes tres-negro{
     from{
-        margin-top:16.1%;
-        margin-left:38.9%;
+        margin-top:5%;
+        margin-left:27%;
     }
     50%{
-        margin-top:62%;
-        margin-left:28.8%;
+        margin-top:54.5%;
+        margin-left:7%;
     }
     to{
-        margin-top:51.9%;
-        margin-left:69.4%;
+        margin-top:5%;
+        margin-left:87%;
     }
 }
 @keyframes cuatro-negro{
     from{
-        margin-top:16.1%;
-        margin-left:38.9%;
+        margin-top:5%;
+        margin-left:27%;
     }
     50%{
-        margin-top:41.8%;
-        margin-left:28.8%;
+        margin-top:38%;
+        margin-left:7%;
     }
     to{
-        margin-top:16.1%;
-        margin-left:69.4%;
+        margin-top:5%;
+        margin-left:87%;
     }
 }
 @keyframes cinco-negro{
     from{
-        margin-top:16.1%;
-        margin-left:38.9%;
+        margin-top:5%;
+        margin-left:27%;
     }
     50%{
-        margin-top:31.7%;
-        margin-left:28.8%;
+        margin-top:21.5%;
+        margin-left:7%;
     }
     to{
-        margin-top:16.1%;
-        margin-left:69.4%;
+        margin-top:5%;
+        margin-left:87%;
+    }
+}
+
+@keyframes uno-blanco{
+    from{
+        margin-top:5%;
+        margin-left:27%;
+    }
+    50%{
+        margin-top:87.5%;
+        margin-left:27%;
+    }
+    to{
+        margin-top:5%;
+        margin-left:87%;
+    }
+}
+@keyframes dos-blanco{
+    from{
+        margin-top:5%;
+        margin-left:27%;
+    }
+    50%{
+        margin-top:71%;
+        margin-left:27%;
+    }
+    to{
+        margin-top:5%;
+        margin-left:87%;
+    }
+}
+@keyframes tres-blanco{
+    from{
+        margin-top:5%;
+        margin-left:27%;
+    }
+    50%{
+        margin-top:54.5%;
+        margin-left:27%;
+    }
+    to{
+        margin-top:5%;
+        margin-left:87%;
+    }
+}
+@keyframes cuatro-blanco{
+    from{
+        margin-top:5%;
+        margin-left:27%;
+    }
+    50%{
+        margin-top:38%;
+        margin-left:27%;
+    }
+    to{
+        margin-top:5%;
+        margin-left:87%;
+    }
+}
+@keyframes cinco-blanco{
+    from{
+        margin-top:5%;
+        margin-left:27%;
+    }
+    50%{
+        margin-top:21.5%;
+        margin-left:27%;
+    }
+    to{
+        margin-top:5%;
+        margin-left:87%;
+    }
+}
+@keyframes ahora-uno-blanco{
+    from{
+        background: rgb(59, 58, 58);  
+    }
+    to{
+        background: rgb(255, 221, 158);
     }
 }
