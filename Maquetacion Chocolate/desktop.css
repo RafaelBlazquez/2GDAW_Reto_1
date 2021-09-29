@@ -1,0 +1,242 @@
+html{
+    height: 100%;
+    width: 100%;
+    margin: 0%;
+}
+
+@media (min-width:1920px){
+    
+    body{
+        width: 100%;
+        height: 100%;
+        margin: 0;
+        background-color: black;
+        overflow: hidden;
+    }
+    
+    
+    /*HEADER*/
+    header{
+        height: 8%;
+        width: 100%;
+        background-color: rgb(46, 25, 6);
+        position: relative;
+    }
+    
+    header p{
+        position: absolute;
+        font-size: 2.5pc;
+        color: wheat;
+        margin-top: 0.5%;
+        font-family: 'Times New Roman', Times, serif;
+        margin-left: 40%;
+    }
+    
+    #mainBotones{
+        width: 100%;
+        height: 4%;
+        background-color: rgb(46, 25, 6);
+    }
+    
+    /*BODY*/
+    #botones{
+        margin-left: auto;
+        margin-right: auto;
+        width: 20%;
+        height: 50%;
+        border-radius: 0.5em;
+        margin-left: 40%;
+        position: absolute;
+    }
+    
+    #left{
+        float: left;
+        width: 50%;
+        height: 82%;
+        background-color: rgb(70, 54, 38);
+        transition: width 1.5s;
+    }
+    
+    #right{ 
+        float: left;
+        width: 50%;
+        height:82%;
+        background: wheat;
+        transition: width 1.5s;
+    }
+    
+    
+    #botones ul{
+        list-style: none;
+        margin: 0;
+    }
+    
+    #botones ul li{
+        display: inline-block;
+    }
+    
+    #datos{
+        background-color: rgb(106, 255, 47);
+        border: none;
+        border-radius: 0.5em;
+        box-shadow: 0px 0px 5px rgb(106, 255, 47);
+        opacity: 0.8;
+    }
+    
+    #animacion{
+        background-color: rgb(106, 255, 47);
+        border: none;
+        border-radius: 0.5em;
+        box-shadow: 0px 0px 5px rgb(106, 255, 47);
+        opacity: 0.8;
+    }
+    
+    #datos:hover{
+        opacity: 1;
+    }
+    
+    #animacion:hover{
+        opacity: 1;
+    }
+    
+    .info{
+        height: 90%;
+        width: 90%;
+        margin-left: auto;
+        margin-right: auto;
+        background-color: white;
+        opacity: 0.85;
+        margin-top: 35px;
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+        position: relative;
+        overflow-y: scroll;
+        overflow-x: hidden;
+    }
+    
+    .info2{
+        height: 90%;
+        width: 90%;
+        margin-left: auto;
+        margin-right: auto;
+        /*background-color: black;*/
+        opacity: 0.85;
+        margin-top: 35px;
+        /*box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);*/
+        position: relative;
+        overflow: hidden;
+    }
+    
+    #columnchart_values{
+        width: 80%;
+        height: 50%;
+        position: absolute;
+        margin-left: 10%;
+        margin-top: 450px;
+        opacity: 1;
+        transition: opacity 1s;
+    }
+    
+    #hiddeninfo{
+        width: 30%;
+        height: 40%;
+        background-color: rgb(37, 37, 37);
+        position: absolute;
+        margin-left: 45%;
+        opacity: 0;
+        transition: opacity 1s;
+        margin-top: 515px;
+    
+    }
+    
+    
+    /*TABLA*/
+    .styled-table {
+        border-collapse: collapse;
+        font-size: 0.9em;
+        font-family: sans-serif;
+        width: 100%;
+        height: auto;
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+        opacity: 1;
+        transition: opacity 0.85s;
+        position: absolute;
+    }
+    
+    .styled-table thead tr {
+        background-color: #412d02;
+        color: #ffffff;
+        text-align: left;
+    }
+    
+    .styled-table th,.styled-table td {
+        padding: 12px 15px;
+    }
+    
+    .styled-table tbody tr {
+        border-bottom: 1px solid #dddddd;
+    }
+    
+    .styled-table tbody tr {
+        background-color: #f3f3f3;
+    }
+    
+    .styled-table tbody tr:last-of-type {
+        border-bottom: 2px solid #412d02;
+    }
+    
+    .led{
+        height: 8px;
+        width: 8px;
+        background-color: rgb(106, 255, 47);
+        border: solid 0.5px black;
+        border-radius: 50%;
+    }
+    
+    /*FOOTER*/
+    footer{
+        height: 6%;
+        width: 100%;
+        background-color: rgb(46, 25, 6);
+        display: inline-block;
+        position: relative;
+    }
+    
+    footer a{
+        color:wheat;
+        font-size: 1.7pc;
+        font-family: 'Times New Roman', Times, serif;
+        position: absolute;
+        margin-top: 0.5%;
+        margin-left: 2.4%;
+    }
+    
+    footer img{
+        position: absolute;
+        right: 0;
+        margin-top: 0.5%;
+        margin-right: 2.5%;
+    }
+    
+    /*ANIMACION*/
+    #ejemplo{
+        margin-left:48%;
+        width: 40px;
+        height: 70px;
+        background-color: rgb(93, 48, 21);
+        animation-iteration-count: infinite;
+        animation-name: abajo;
+        animation-duration: 3s;
+    }
+    
+    @keyframes abajo{
+        from{
+            margin-top: 20px;
+    
+        }
+        to{
+            margin-top: 550px;
+        }
+    }    
+
+}
+
