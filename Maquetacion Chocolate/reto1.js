@@ -8,7 +8,6 @@ function datosF(){
         animacionbt=document.getElementById('right');
         animacionbt.style.width = 100+"%";
         datosbt.style.width = 0 + "%";
-        /*document.getElementById('tablainfo').style.opacity = 0 ;*/
         datosActivo=false;
         document.getElementById("datos").style.backgroundColor="red";
         document.getElementById("datos").style.boxShadow="0px 0px 5px red";
@@ -26,7 +25,6 @@ function datosF(){
         document.getElementById("columnchart_values").style.opacity=1;
         var tabla = document.getElementsByClassName("styled-table");
         tabla[0].style.opacity=1;
-        /*document.getElementById('tablainfo').style.opacity = 1 ;*/
     }
 
     /*if(datosActivo==true && animacionActivo==false){
