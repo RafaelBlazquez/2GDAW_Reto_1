@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>index</title>
+    <link rel="stylesheet" href="./styles.css">
+    <script src="./reto1.js"></script>
+    <!--SCRIPTS GRAFICOS-->
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+        google.charts.load("current", {packages:['corechart']});
+        google.charts.setOnLoadCallback(drawChart);
+        function drawChart() {
+          var data = google.visualization.arrayToDataTable([
+            ["Dato", "Valor", { role: "style" } ],
+            ["Posicion X", 8.94, "silver"],
+            ["Posicion Y", 10.49, "gold"],
+          ]);
+    
+          var view = new google.visualization.DataView(data);
+          view.setColumns([0, 1,
+                           { calc: "stringify",
+                             sourceColumn: 1,
+                             type: "string",
+                             role: "annotation" },
+                           2]);
+    
+          var options = {
+            title: "Datos Chocolates",
+            width: document.getElementById("infodiv").width*80/100,
+            height: document.getElementById("infodiv").height*50/100,
+            bar: {groupWidth: "95%"},
+            legend: { position: "none" },
+          };
+          var chart = new google.visualization.ColumnChart(document.getElementById("columnchart_values"));
+          chart.draw(view, options);
+      }
+      </script>
+       <script type="text/javascript">
+        google.charts.load("current", {packages:['corechart']});
+        google.charts.setOnLoadCallback(drawChart);
+        function drawChart() {
+          var data = google.visualization.arrayToDataTable([
+            ["Dato", "Valor", { role: "style" } ],
+            ["Chocolate Blanco ", 19.30, "silver"],
+            ["Chocolate Negro", 21.45, "color: grey"],
+          ]);
+    
+          var view = new google.visualization.DataView(data);
+          view.setColumns([0, 1,
+                           { calc: "stringify",
+                             sourceColumn: 1,
+                             type: "string",
+                             role: "annotation" },
+                           2]);
+    
+          var options = {
+            title: "Datos Chocolates",
+            width: document.getElementById("infodiv").width*80/100,
+            height: document.getElementById("infodiv").height*50/100,
+            bar: {groupWidth: "95%"},
+            legend: { position: "none" },
+          };
+          var chart = new google.visualization.ColumnChart(document.getElementById("hiddeninfo"));
+          chart.draw(view, options);
+      }
+      </script>
+</head>
+<body>
+    <header>
+       <p>Chocolates Willy Wonka</p>
+    </header>
+
+    <div id="mainBotones">
+        <div id="botones">
+            <ul>
+                <li><button id="datos" onclick="datosF()" title="Mostrar Datos" style="margin-right:1pc;margin-left: 7.25pc;outline: none;"><svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-graph-up" viewBox="0 0 16 16">
+                    <path fill-rule="evenodd" d="M0 0h1v15h15v1H0V0zm10 3.5a.5.5 0 0 1 .5-.5h4a.5.5 0 0 1 .5.5v4a.5.5 0 0 1-1 0V4.9l-3.613 4.417a.5.5 0 0 1-.74.037L7.06 6.767l-3.656 5.027a.5.5 0 0 1-.808-.588l4-5.5a.5.5 0 0 1 .758-.06l2.609 2.61L13.445 4H10.5a.5.5 0 0 1-.5-.5z"/>
+                    </svg></button></li>
+            
+                <li><button id="animacion" onclick="animacionF()" title="Mostrar Animacion" style="outline: none;"><svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-caret-right-square" viewBox="0 0 16 16">
+                    <path d="M14 1a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1h12zM2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2z"/>
+                    <path d="M5.795 12.456A.5.5 0 0 1 5.5 12V4a.5.5 0 0 1 .832-.374l4.5 4a.5.5 0 0 1 0 .748l-4.5 4a.5.5 0 0 1-.537.082z"/>
+                  </svg></button></li>
+            </ul>
+        </div>
+    </div>
+
+    <!--DATOS-->
+    <aside id="left">
+        <div class="info" id="infodiv">
+            <table id="tablainfo" class="styled-table">
+                <thead>
+                    <tr>
+                        <th>Dato</th>
+                        <th>Tipo de dato</th>
+                        <th>Valor de arranque</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr> 
+                        <td>currentpY</td>
+                        <td>DInt</td>
+                        <td>0</td>
+                    </tr>
+                    <tr>
+                        <td>posX1</td>
+                        <td>Bool</td>
+                        <td>false</td>
+                    </tr>
+                    <tr>
+                        <td>posX2</td>
+                        <td>Bool</td>
+                        <td>false</td>
+                    </tr>
+                    <tr>
+                        <td>posx3</td>
+                        <td>Bool</td>
+                        <td>false</td>
+                    </tr>
+
+                    <tr>
+                        <td>sensor</td>
+                        <td>Bool</td>
+                        <td>false</td>
+                    </tr>
+
+                    <tr>
+                        <td>movimiento</td>
+                        <td>Bool</td>
+                        <td>false</td>
+                    </tr>
+
+                    <tr>
+                        <td>posicionOBJB</td>
+                        <td>DInt</td>
+                        <td>0</td>
+                    </tr>
+
+                    <tr>
+                        <td>TxokCogido</td>
+                        <td>DInt</td>
+                        <td>0</td>
+                    </tr>
+
+                    <tr>
+                        <td>posicionOBJN</td>
+                        <td>DInt</td>
+                        <td>0</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div id="columnchart_values"></div>
+
+            <div id="hiddeninfo"></div>
+        </div>
+    </aside>
+
+    <!--ANIMACION-->
+    <aside id="right">
+        <div class="info2" style="position: relative;">
+            <div id="ejemplo" style="position: absolute;"></div>
+        </div>
+    </aside> 
+     
+    <footer>
+        <a>Willy Wonka Inc. | 2021</a>
+        <img alt="Licencia de Creative Commons" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png" />
+    </footer>
+
+</body>
+</html>

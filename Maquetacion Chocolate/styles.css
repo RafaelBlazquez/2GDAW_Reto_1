@@ -9,8 +9,11 @@ body{
     height: 100%;
     margin: 0;
     background-color: black;
+    overflow: hidden;
 }
 
+
+/*HEADER*/
 header{
     height: 8%;
     width: 100%;
@@ -104,6 +107,8 @@ header p{
     margin-top: 35px;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
     position: relative;
+    overflow-y: scroll;
+    overflow-x: hidden;
 }
 
 .info2{
@@ -116,6 +121,28 @@ header p{
     margin-top: 35px;
     /*box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);*/
     position: relative;
+    overflow: hidden;
+}
+
+#columnchart_values{
+    width: 80%;
+    height: 50%;
+    position: absolute;
+    margin-left: 10%;
+    margin-top: 450px;
+    opacity: 1;
+    transition: opacity 1s;
+}
+
+#hiddeninfo{
+    width: 30%;
+    height: 40%;
+    background-color: rgb(37, 37, 37);
+    position: absolute;
+    margin-left: 55%;
+    opacity: 0;
+    transition: opacity 1s;
+    margin-top: 450px;
 }
 
 
@@ -127,7 +154,8 @@ header p{
     width: 100%;
     height: auto;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
-    /*transition: opacity 1.2s;*/
+    opacity: 1;
+    transition: opacity 0.85s;
     position: absolute;
 }
 
@@ -154,10 +182,6 @@ header p{
 }
 
 
-#chartContainer{
-    transition: opacity 1s;
-}
-
 /*FOOTER*/
 footer{
     height: 6%;
@@ -176,9 +200,16 @@ footer a{
     margin-left: 2.4%;
 }
 
+footer img{
+    position: absolute;
+    right: 0;
+    margin-top: 0.5%;
+    margin-right: 2.5%;
+}
 
+/*ANIMACION*/
 #ejemplo{
-    margin-left:45%;
+    margin-left:48%;
     width: 40px;
     height: 70px;
     background-color: rgb(93, 48, 21);

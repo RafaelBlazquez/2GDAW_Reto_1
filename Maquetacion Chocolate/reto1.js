@@ -12,7 +12,9 @@ function datosF(){
         datosActivo=false;
         document.getElementById("datos").style.backgroundColor="red";
         document.getElementById("datos").style.boxShadow="0px 0px 5px red";
-        document.getElementById("chartContainer").style.opacity=0;
+        document.getElementById("columnchart_values").style.opacity=0;
+        var tabla = document.getElementsByClassName("styled-table");
+        tabla[0].style.opacity=0;
     }else{
         datosbt=document.getElementById("left");
         animacionbt=document.getElementById('right');
@@ -21,7 +23,9 @@ function datosF(){
         datosActivo=true;
         document.getElementById("datos").style.backgroundColor="rgb(106, 255, 47)";
         document.getElementById("datos").style.boxShadow="0px 0px 5px rgb(106, 255, 47)";
-        document.getElementById("chartContainer").style.opacity=1;
+        document.getElementById("columnchart_values").style.opacity=1;
+        var tabla = document.getElementsByClassName("styled-table");
+        tabla[0].style.opacity=1;
         /*document.getElementById('tablainfo').style.opacity = 1 ;*/
     }
 
@@ -63,6 +67,7 @@ function animacionF(){
         datosbt.style.width= 100 + "%";
         document.getElementById("animacion").style.backgroundColor="red";
         document.getElementById("animacion").style.boxShadow="0px 0px 5px red";
+        document.getElementById("hiddeninfo").style.opacity=1;
         animacionActivo=false;
     }else{
         datosbt=document.getElementById("left");
@@ -71,6 +76,7 @@ function animacionF(){
         datosbt.style.width= 50 + "%";
         document.getElementById("animacion").style.backgroundColor="rgb(106, 255, 47)";
         document.getElementById("animacion").style.boxShadow="0px 0px 5px rgb(106, 255, 47)";
+        document.getElementById("hiddeninfo").style.opacity=0;
         animacionActivo=true;
     }
 
@@ -101,39 +107,7 @@ function animacionF(){
 
 
 
-/*GRAFICO*/
-window.onload = function () {
 
-    var chart = new CanvasJS.Chart("chartContainer", {
-        animationEnabled: true,
-        exportEnabled: true,
-        zoomEnabled: true, 
-        with:2000,
-        theme: "light2", // "light1", "light2", "dark1", "dark2"
-        title:{
-            text: "Gráfico Chocolates"
-        },
-          axisY: {
-          includeZero: true
-        },
-        data: [{
-            type: "column", //change type to bar, line, area, pie, etc
-            //indexLabel: "{y}", //Shows y value on all Data Points
-            indexLabelFontColor: "#5A5757",
-              indexLabelFontSize: 16,
-            indexLabelPlacement: "outside",
-            dataPoints: [
-                { x: 10, y: 71 },
-                { x: 50, y: 92, indexLabel: "Valor Max." },
-                { x: 60, y: 68 },
-                { x: 70, y: 38 },
-                { x: 130, y: 21, indexLabel: "Valor Min." }
-            ]
-        }]
-    });
-    chart.render();
-    
-}    
 
 
 
