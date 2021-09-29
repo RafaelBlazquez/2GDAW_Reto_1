@@ -13,57 +13,73 @@ var posicionOBJB = 0;
 var circulosBlancos = [document.getElementById('dosuno'),document.getElementById('dosdos'),document.getElementById('dostres'),document.getElementById('doscuatro'),document.getElementById('doscinco')];
 console.log(circulosBlancos);
 var txokCogido = false;
-
+var arrayBlancos =['uno-blanco','dos-blanco','tres-blanco','cuatro-blanco','cinco-blanco'];
+var arrayNegros =['uno-negro','dos-negro','tres-negro','cuatro-negro','cinco-negro'];
 var tiempoTranscurrido =0;
 window.onload =  empezar();
+var contador=0;
+console.log(contador);
 
 
 function empezar(){
-  console.log('empezamos')
   var valvula = document.getElementById('valvula');
-  console.log(valvula);
-  valvula.style.animationName = 'mirarColor';
-  valvula.style.animationDuration  ='3s';
-  tiempoTranscurrido = tiempoTranscurrido +3;
-  console.log(valvula.getAnimations()[0]);
+
+  mirarColor();
+  
+
 
   //condicion para saber si la valvula esta sobre el sensor
   posX2=true;
   sensor=true;
-  
+  var truefalse=[0,0,1,1,0,1,1,0,1,0];
   if(posX2){
     //condicion para saber el dato que nos ha devuelto el sensor
-    if(sensor){
-      //añadir animacion a cola (array de animaciones)
-      window.setTimeout(primerblanco, 3000);
+    console.log(truefalse);
+    if(truefalse[contador]==0){
       
-      window.setTimeout(cambiarColorBlanco, 8000);
-      console.log(valvula.getAnimations());
+      contador++;
+      console.log(contador);
+      window.setTimeout(siguienteBlanco, 3000);
       
     }
     else{
-      valvula.style.animationName = valvula.getAnimations()[0].animationName +',uno-negro';
-      valvula.style.animationDuration  ='10s';
-      valvula.style.animationDelay = tiempoTranscurrido +'s';
-      window.setTimeout(cambiarColorNegro, 8000);
+      contador++;
+      console.log(contador);
+      window.setTimeout(siguienteNegro, 3000);
       
     }
-    tiempoTranscurrido += 10;
+    
   }
-}
 
+}
+function mirarColor(){
+  valvula.style.animationName = 'mirarColor';
+  valvula.style.animationDuration  ='3s';
+}
+function siguienteBlanco(){
+  valvula.style.animationName =arrayBlancos[posicionOBJB];
+  valvula.style.animationDuration  ='10s';
+  window.setTimeout(cambiarColorBlanco, 5000);
+}
+function siguienteNegro(){
+  valvula.style.animationName =arrayNegros[posicionOBJN];
+  valvula.style.animationDuration  ='10s';
+  window.setTimeout(cambiarColorNegro, 5000);
+}
 function cambiarColorBlanco(){
   circulosBlancos[posicionOBJB].style.background = 'white';
   posicionOBJB++;
+  
+  if(posicionOBJB<=4)
+  window.setTimeout(empezar, 5000);
+
 }
 
 function cambiarColorNegro(){
   circulosNegros[posicionOBJN].style.background = 'black';
   posicionOBJN++;
+  
+  if(posicionOBJN<=4)
+  window.setTimeout(empezar, 5000);
 }
 
-function primerblanco(){
-  valvula.style.animationName ='uno-blanco';
-  valvula.style.animationDuration  ='10s';
-  console.log(hola);
-}
