@@ -4,8 +4,6 @@ var posX2 = false;
 var posX3 = false;
 
 var currentY = 0;
-var sensor = false;
-var movimiento = false;
 var posicionOBJN = 0;
 var circulosNegros = [document.getElementById('unouno'),document.getElementById('unodos'),document.getElementById('unotres'),document.getElementById('unocuatro'),document.getElementById('unocinco')];
 console.log(circulosNegros);
@@ -15,71 +13,94 @@ console.log(circulosBlancos);
 var txokCogido = false;
 var arrayBlancos =['uno-blanco','dos-blanco','tres-blanco','cuatro-blanco','cinco-blanco'];
 var arrayNegros =['uno-negro','dos-negro','tres-negro','cuatro-negro','cinco-negro'];
-var tiempoTranscurrido =0;
-window.onload =  empezar();
 var contador=0;
-console.log(contador);
-
+var contadorpreguntas=0;
+var truefalse=[0,0,1,1,0,1,1,0,1,0];
+//empieza aqui:
+window.onload = empezar();
 
 function empezar(){
+  var movimiento = document.getElementById('movimiento');
+  movimiento.style.visibility = 'visible';
+  movimiento.style.background = 'rgb(80, 76, 76)';
   var valvula = document.getElementById('valvula');
+  movimiento.style.marginTop= '0%';
+  movimiento.style.marginLeft='82%';
+  //condicion para saber si la valvula esta al inicio
+  /*Datos de prueba*/
+  posX3=true;
+  currentY=5;
+  if(posX3 && currentY ==5){
 
-  mirarColor();
-  
+    //condicion para saber si la valvula esta en el sensor
+    /*Datos de prueba*/
+    posX2=true;
+    currentY=2;
+    if(posX2 && currentY ==2){
 
-
-  //condicion para saber si la valvula esta sobre el sensor
-  posX2=true;
-  sensor=true;
-  var truefalse=[0,0,1,1,0,1,1,0,1,0];
-  if(posX2){
-    //condicion para saber el dato que nos ha devuelto el sensor
-    console.log(truefalse);
-    if(truefalse[contador]==0){
+      //mover valvula hasta el sensor
+      irSensor();
       
-      contador++;
-      console.log(contador);
-      window.setTimeout(siguienteBlanco, 3000);
-      
+      //recibir datos sensor
+      /*truefalse y contador --> Datos de prueba*/
+      resultadoSensor= truefalse[contador];
+
+      if(resultadoSensor==0){
+        contador++;
+        console.log(contador);
+        window.setTimeout(siguienteBlanco, 3000);
+      }
+      else{
+        contador++;
+        console.log(contador);
+        window.setTimeout(siguienteNegro, 3000);
+        
+      }
+      window.setTimeout(transparente,8000);
+      valvula.style.visibility= 'visible';
     }
-    else{
-      contador++;
-      console.log(contador);
-      window.setTimeout(siguienteNegro, 3000);
-      
-    }
-    
+  }
+  else{
+    window.setTimeout(empezar,500);
+    contadorpreguntas++;
+    console.log(contadorpreguntas);
   }
 
+
 }
-function mirarColor(){
-  valvula.style.animationName = 'mirarColor';
-  valvula.style.animationDuration  ='3s';
+function irSensor(){
+  movimiento.style.animationName = 'irSensor';
+  movimiento.style.animationDuration  ='3s';
 }
+
 function siguienteBlanco(){
-  valvula.style.animationName =arrayBlancos[posicionOBJB];
-  valvula.style.animationDuration  ='10s';
+  movimiento.style.animationName =arrayBlancos[posicionOBJB];
+  movimiento.style.animationDuration  ='10s';
+  movimiento.style.background = 'wheat';
   window.setTimeout(cambiarColorBlanco, 5000);
 }
 function siguienteNegro(){
-  valvula.style.animationName =arrayNegros[posicionOBJN];
-  valvula.style.animationDuration  ='10s';
+
+  movimiento.style.animationName =arrayNegros[posicionOBJN];
+  movimiento.style.animationDuration  ='10s';
+  movimiento.style.background = 'rgb(100, 70, 40)';
   window.setTimeout(cambiarColorNegro, 5000);
 }
 function cambiarColorBlanco(){
-  circulosBlancos[posicionOBJB].style.background = 'white';
+  circulosBlancos[posicionOBJB].style.background = 'wheat';
   posicionOBJB++;
   
-  if(posicionOBJB<=4)
+  if(contador<=9)
   window.setTimeout(empezar, 5000);
 
 }
-
 function cambiarColorNegro(){
-  circulosNegros[posicionOBJN].style.background = 'black';
+  circulosNegros[posicionOBJN].style.background = 'rgb(100, 70, 40)';
   posicionOBJN++;
   
-  if(posicionOBJN<=4)
+  if(contador<=9)
   window.setTimeout(empezar, 5000);
 }
-
+function transparente(){
+  movimiento.style.visibility = 'hidden';
+}
