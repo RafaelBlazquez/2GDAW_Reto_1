@@ -76,7 +76,7 @@ html{
     #left{
         float: left;
         width: 50%;
-        height: 82%;
+        height: 81%;
         background-color: rgb(70, 54, 38);
         transition: width 1.5s;
     }
@@ -84,7 +84,7 @@ html{
     #right{ 
         float: left;
         width: 50%;
-        height:82%;
+        height:81%;
         background: wheat;
         transition: width 1.5s;
     }
@@ -128,8 +128,11 @@ html{
         max-width: 60%;
 
         height: 50%;
-        margin-left: 9%;
-        margin-top: 400px;
+        /*margin-left: 9%;
+        margin-top: 30%;*/
+        position: relative;
+        top: 49%;
+        left: 9%;
         opacity: 1;
         transition: opacity 1s;
         display: inline-block;
@@ -140,8 +143,11 @@ html{
         max-width: 60%;
 
         height: 50%;
-        margin-left: 9%;
-        margin-top: 400px;
+        /*margin-left: 9%;
+        margin-top: 400px;*/
+        position: relative;
+        top: 49%;
+        left: 9%;
         opacity: 0;
         transition: opacity 1s;
         display: inline-block;
@@ -151,7 +157,7 @@ html{
     /*TABLA*/
     .styled-table {
         border-collapse: collapse;
-        font-size: 1.8pc;
+        font-size: 1.2pc;
         font-family: sans-serif;
         width: 50%;
         height: auto;
@@ -163,6 +169,28 @@ html{
         margin-left: 5%;
         float: left;
     }
+
+    .styled-table thead tr {
+        background-color: #412d02;
+        color: #ffffff;
+        text-align: left;
+    }
+    
+    .styled-table th,.styled-table td {
+        padding: 12px 15px;
+    }
+    
+    .styled-table tbody tr {
+        border-bottom: 1px solid #dddddd;
+    }
+    
+    .styled-table tbody tr {
+        background-color: #f3f3f3;
+    }
+    
+   /* .styled-table tbody tr:last-of-type {
+        border-bottom: 2px solid #412d02;
+    }*/
 
     /*PANEL DE LEDS*/
     #ledpanel{
@@ -177,7 +205,7 @@ html{
     #ledtable{
         margin: 0%;
         text-align: center;
-        font-size: 1.5pc;
+        font-size: 1.2pc;
         font-family: sans-serif;
         width: 100%;
         height: auto;
@@ -211,30 +239,6 @@ html{
         margin-left: auto;
         margin-right: auto;
     }
-
-    
-    
-    .styled-table thead tr {
-        background-color: #412d02;
-        color: #ffffff;
-        text-align: left;
-    }
-    
-    .styled-table th,.styled-table td {
-        padding: 12px 15px;
-    }
-    
-    .styled-table tbody tr {
-        border-bottom: 1px solid #dddddd;
-    }
-    
-    .styled-table tbody tr {
-        background-color: #f3f3f3;
-    }
-    
-   /* .styled-table tbody tr:last-of-type {
-        border-bottom: 2px solid #412d02;
-    }*/
     
     
     /*FOOTER*/
@@ -263,7 +267,7 @@ html{
     }
     
     /*ANIMACION*/
-    #ejemplo{
+    /*#ejemplo{
         margin-left:48%;
         width: 40px;
         height: 70px;
@@ -281,7 +285,7 @@ html{
         to{
             margin-top: 550px;
         }
-    }    
+    } */   
 
 }
 
