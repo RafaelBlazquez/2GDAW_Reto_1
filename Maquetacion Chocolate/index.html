@@ -17,7 +17,7 @@
           var data = google.visualization.arrayToDataTable([
             ["Dato", "Valor", { role: "style" } ],
             ["Posicion X", 8.94, "silver"],
-            ["Posicion Y", 10.49, "gold"],
+            ["Posicion Y", 10.49, "grey"],
           ]);
     
           var view = new google.visualization.DataView(data);
@@ -72,12 +72,14 @@
           chart.draw(view, options);
       }
       </script>
+      <!--ANIMACION-->
+      <link rel="stylesheet" href="./Animacion/Animacion.css">
+    
 </head>
 <!--BODY-->
 <body>
     <!--HEADER-->
     <header>
- >
         <p>Chocolates Willy Wonka</p>
     </header>
 
@@ -88,7 +90,7 @@
                     <path fill-rule="evenodd" d="M0 0h1v15h15v1H0V0zm10 3.5a.5.5 0 0 1 .5-.5h4a.5.5 0 0 1 .5.5v4a.5.5 0 0 1-1 0V4.9l-3.613 4.417a.5.5 0 0 1-.74.037L7.06 6.767l-3.656 5.027a.5.5 0 0 1-.808-.588l4-5.5a.5.5 0 0 1 .758-.06l2.609 2.61L13.445 4H10.5a.5.5 0 0 1-.5-.5z"/>
                     </svg></button></li>
             
-                <li><button id="animacion" onclick="animacionF()" title="Mostrar Animacion" style="outline: none;"><svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-caret-right-square" viewBox="0 0 16 16">
+                <li><button id="animacion2" onclick="animacionF()" title="Mostrar Animacion" style="outline: none;"><svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-caret-right-square" viewBox="0 0 16 16">
                     <path d="M14 1a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1h12zM2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2z"/>
                     <path d="M5.795 12.456A.5.5 0 0 1 5.5 12V4a.5.5 0 0 1 .832-.374l4.5 4a.5.5 0 0 1 0 .748l-4.5 4a.5.5 0 0 1-.537.082z"/>
                   </svg></button></li>
@@ -101,66 +103,59 @@
         <div class="info" id="infodiv">
             <!--TABLA-->
             <table id="tablainfo" class="styled-table">
-                <thead>
-                    <tr>
-                        <th>Dato</th>
-                        <th>Tipo de dato</th>
-                        <th>Valor de arranque</th>
-                    </tr>
-                </thead>
                 <tbody>
                     <tr> 
-                        <td>currentpY</td>
-                        <td>DInt</td>
+                        <td>Posicion Y</td>
                         <td>0</td>
                     </tr>
                     <tr>
-                        <td>posX1</td>
-                        <td>Bool</td>
-                        <td><div class="led"></div></td>
-                    </tr>
-                    <tr>
-                        <td>posX2</td>
-                        <td>Bool</td>
-                        <td><div class="led" style="background-color: rgb(116, 116, 116);"></div></td>
-                    </tr>
-                    <tr>
-                        <td>posx3</td>
-                        <td>Bool</td>
-                        <td><div class="led" style="background-color: rgb(116, 116, 116);"></div></td>
+                        <td>Posicion X</td>
+                        <td><div class="led"></div>
+                            <div class="led" style="background-color: rgb(116, 116, 116);"></div>
+                            <div class="led" style="background-color: rgb(116, 116, 116);"></div></td>  
                     </tr>
 
                     <tr>
-                        <td>sensor</td>
-                        <td>Bool</td>
-                        <td><div class="led" style="background-color: rgb(116, 116, 116);"></div></td>
-                    </tr>
-
-                    <tr>
-                        <td>movimiento</td>
-                        <td>Bool</td>
-                        <td><div class="led"></div></td>
-                    </tr>
-
-                    <tr>
-                        <td>posicionOBJB</td>
-                        <td>DInt</td>
+                        <td>Posicion OBJB.</td>
                         <td>0</td>
                     </tr>
 
                     <tr>
-                        <td>TxokCogido</td>
-                        <td>Bool</td>
-                        <td><div class="led"></div></td>
-                    </tr>
-
-                    <tr>
-                        <td>posicionOBJN</td>
-                        <td>DInt</td>
+                        <td>Posicion OBJN</td>
                         <td>0</td>
                     </tr>
                 </tbody>
             </table>
+
+            <div id="ledpanel" class="ledpanel">
+                <table id="ledtable">
+                    <tbody>
+                        <tr> 
+                            <td>Movimiento</td>                       
+                        </tr>
+                        <tr>
+                            <td><div class="led2"></td>
+                        </tr>
+
+
+                        <tr> 
+                            <td>Valvula</td>                      
+                        </tr>
+                        <tr>
+                            <td><div class="led2"></td>
+                        </tr>
+
+
+                        <tr> 
+                            <td>Sensor</td>                      
+                        </tr>
+                        <tr>
+                            <td><div class="led2"></td>
+                        </tr>
+                        
+                    </tbody>
+                </table>
+            </div>
 
             <div id="columnchart_values"></div>
 
@@ -171,13 +166,58 @@
     <!--ANIMACION-->
     <aside id="right">
         <div class="info2" style="position: relative;">
-            <div id="ejemplo" style="position: absolute;"></div>
+            
+
+            <div id="animacion">
+        
+                <div id="base">
+                    
+                       
+                            <div class="circulo" id="sensor"></div>
+        
+                            <div class="circulo" id="piezas"></div>
+                          
+                            <div class="circulo cinco dosuno" id="unouno"></div>
+                            <div class="circulo cinco dosdos" id="unodos"></div>
+                            <div class="circulo cinco dostres" id="unotres"></div>
+                            <div class="circulo cinco doscuatro"id="unocuatro"></div>
+                            <div class="circulo cinco doscinco"id="unocinco"></div>  
+                            
+                            <div class="circulo cuatro dosuno" id="dosuno"></div>
+                            <div class="circulo cuatro dosdos" id="dosdos"></div>
+                            <div class="circulo cuatro dostres" id="dostres"></div>
+                            <div class="circulo cuatro doscuatro"id="doscuatro"></div>
+                            <div class="circulo cuatro doscinco" id="doscinco"></div> 
+        
+                            <div class="circulo tres dosuno"></div>
+                            <div class="circulo tres dosdos" ></div>
+                            <div class="circulo tres dostres" ></div>
+                            <div class="circulo tres doscuatro"></div>
+                            <div class="circulo tres doscinco"></div> 
+        
+                            <div class="circulo dos dosuno"></div>
+                            <div class="circulo dos dosdos" ></div>
+                            <div class="circulo dos dostres" ></div>
+                            <div class="circulo dos doscuatro"></div>
+                            <div class="circulo dos doscinco"></div> 
+        
+                            <div class="circulo uno dosuno"></div>
+                            <div class="circulo uno dosdos" ></div>
+                            <div class="circulo uno dostres" ></div>
+                            <div class="circulo uno doscuatro"></div>
+                            <div class="circulo uno doscinco"></div> 
+        
+                        <div id="movimiento"><div id="valvula"></div></div>
+                </div>  
+            </div>
+            <script src="./Animacion/Animacion.js"></script>
+
         </div>
     </aside> 
      
     <!--FOOTER-->
     <footer>
-        <a>Willy Wonka Inc. | 2021</a>
+        <p>Willy Wonka Inc. | 2021</p>
         <img alt="Licencia de Creative Commons" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png" />
     </footer>
 
