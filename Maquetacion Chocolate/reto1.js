@@ -11,8 +11,8 @@ function datosF(){
         animacionbt.style.width = 100+"%";
         datosbt.style.width = 0 + "%";
         datosActivo=false;
-        document.getElementById("datos").style.backgroundColor="red";
-        document.getElementById("datos").style.boxShadow="0px 0px 5px red";
+        document.getElementById("Bdatos").style.backgroundColor="red";
+        document.getElementById("Bdatos").style.boxShadow="0px 0px 5px red";
         document.getElementById("columnchart_values").style.opacity=0;
         var tabla = document.getElementsByClassName("styled-table");
         tabla[0].style.opacity=0;
@@ -22,8 +22,8 @@ function datosF(){
         animacionbt.style.width = 50+"%";
         datosbt.style.width = 50 + "%";
         datosActivo=true;
-        document.getElementById("datos").style.backgroundColor="rgb(106, 255, 47)";
-        document.getElementById("datos").style.boxShadow="0px 0px 5px rgb(106, 255, 47)";
+        document.getElementById("Bdatos").style.backgroundColor="rgb(106, 255, 47)";
+        document.getElementById("Bdatos").style.boxShadow="0px 0px 5px rgb(106, 255, 47)";
         document.getElementById("columnchart_values").style.opacity=1;
         var tabla = document.getElementsByClassName("styled-table");
         tabla[0].style.opacity=1;
@@ -65,8 +65,8 @@ function animacionF(){
         animacionbt=document.getElementById('right');
         animacionbt.style.width = 0 + "%";
         datosbt.style.width= 100 + "%";
-        document.getElementById("animacion2").style.backgroundColor="red";
-        document.getElementById("animacion2").style.boxShadow="0px 0px 5px red";
+        document.getElementById("Banimacion").style.backgroundColor="red";
+        document.getElementById("Banimacion").style.boxShadow="0px 0px 5px red";
 
         document.getElementById("hiddeninfo").style.opacity=1;
         document.getElementById("animacion").style.opacity=0;
@@ -76,8 +76,8 @@ function animacionF(){
         animacionbt=document.getElementById('right');
         animacionbt.style.width = 50 + "%";
         datosbt.style.width= 50 + "%";
-        document.getElementById("animacion2").style.backgroundColor="rgb(106, 255, 47)";
-        document.getElementById("animacion2").style.boxShadow="0px 0px 5px rgb(106, 255, 47)";
+        document.getElementById("Banimacion").style.backgroundColor="rgb(106, 255, 47)";
+        document.getElementById("Banimacion").style.boxShadow="0px 0px 5px rgb(106, 255, 47)";
         document.getElementById("hiddeninfo").style.opacity=0;
         document.getElementById("animacion").style.opacity=1;
         animacionActivo=true;

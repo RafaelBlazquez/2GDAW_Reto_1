@@ -32,11 +32,10 @@ html{
     
     #mainBotones{
         width: 100%;
-        height: 4%;
+        height: 31px;
         background-color: rgb(46, 25, 6);
     }
     
-    /*BODY*/
     #botones{
         margin-left: 48%;
         margin-right: auto;
@@ -59,13 +58,9 @@ html{
         border: none;
         border-radius: 0.5em;
         box-shadow: 0px 0px 5px rgb(106, 255, 47);
-<<<<<<< HEAD
         opacity: 0.8;
         outline: none;
         margin-right: 20px;
-=======
-        opacity: 1;
->>>>>>> 2c5d10d5915a681f48561a26cd63a28c3e04fdb6
     }
 
     #Banimacion{
@@ -77,6 +72,7 @@ html{
         outline: none;
     }
     
+    /*BODY*/
     #left{
         float: left;
         width: 50%;
@@ -93,17 +89,13 @@ html{
         transition: width 1.5s;
     }
     
-    
-    
-   
-    
-    #datos:hover{
+    /*#datos:hover{
         opacity: 1;
     }
     
     #animacion2:hover{
         opacity: 1;
-    }
+    }*/
     
     .info{
         height: 90%;
@@ -132,25 +124,27 @@ html{
     }
     
     #columnchart_values{
-        width: 80%;
+        width: 650px;
+        max-width: 60%;
+
         height: 50%;
-        position: absolute;
-        margin-left: 10%;
-        margin-top: 350px;
+        margin-left: 9%;
+        margin-top: 400px;
         opacity: 1;
         transition: opacity 1s;
+        display: inline-block;
     }
     
     #hiddeninfo{
-        width: 30%;
-        height: 40%;
-        background-color: rgb(37, 37, 37);
-        position: absolute;
-        margin-left: 45%;
+        width: 650px;
+        max-width: 60%;
+
+        height: 50%;
+        margin-left: 9%;
+        margin-top: 400px;
         opacity: 0;
         transition: opacity 1s;
-        margin-top: 400px;
-    
+        display: inline-block;
     }
     
     
