@@ -2,6 +2,8 @@ var datosbt;
 var animacionbt
 var datosActivo=true;
 var animacionActivo=true;
+
+
 function datosF(){
     if(datosActivo==true && animacionActivo==true){
         datosbt=document.getElementById("left");
@@ -63,18 +65,21 @@ function animacionF(){
         animacionbt=document.getElementById('right');
         animacionbt.style.width = 0 + "%";
         datosbt.style.width= 100 + "%";
-        document.getElementById("animacion").style.backgroundColor="red";
-        document.getElementById("animacion").style.boxShadow="0px 0px 5px red";
+        document.getElementById("animacion2").style.backgroundColor="red";
+        document.getElementById("animacion2").style.boxShadow="0px 0px 5px red";
+
         document.getElementById("hiddeninfo").style.opacity=1;
+        document.getElementById("animacion").style.opacity=0;
         animacionActivo=false;
     }else{
         datosbt=document.getElementById("left");
         animacionbt=document.getElementById('right');
         animacionbt.style.width = 50 + "%";
         datosbt.style.width= 50 + "%";
-        document.getElementById("animacion").style.backgroundColor="rgb(106, 255, 47)";
-        document.getElementById("animacion").style.boxShadow="0px 0px 5px rgb(106, 255, 47)";
+        document.getElementById("animacion2").style.backgroundColor="rgb(106, 255, 47)";
+        document.getElementById("animacion2").style.boxShadow="0px 0px 5px rgb(106, 255, 47)";
         document.getElementById("hiddeninfo").style.opacity=0;
+        document.getElementById("animacion").style.opacity=1;
         animacionActivo=true;
     }
 
@@ -104,7 +109,9 @@ function animacionF(){
 }
 
 
-
+window.addEventListener('click', function(){
+document.getElementById("iniciarbtn").style.background="radial-gradient(circle, rgba(7,255,2,1) 38%, rgba(15,117,20,1) 92%)";
+});
 
 
 

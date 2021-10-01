@@ -19,7 +19,11 @@ var truefalse=[0,0,1,1,0,1,1,0,1,0];
 //empieza aqui:
 window.onload = empezar();
 
+window.addEventListener('resize', calculaAnimacion);
+
 function empezar(){
+  calculaAnimacion();
+
   var movimiento = document.getElementById('movimiento');
   movimiento.style.visibility = 'visible';
   movimiento.style.background = 'rgb(80, 76, 76)';
@@ -47,7 +51,6 @@ function empezar(){
 
       if(resultadoSensor==0){
         contador++;
-        console.log(contador);
         window.setTimeout(siguienteBlanco, 3000);
       }
       else{
@@ -63,11 +66,11 @@ function empezar(){
   else{
     window.setTimeout(empezar,500);
     contadorpreguntas++;
-    console.log(contadorpreguntas);
   }
 
 
 }
+
 function irSensor(){
   movimiento.style.animationName = 'irSensor';
   movimiento.style.animationDuration  ='3s';
@@ -103,4 +106,21 @@ function cambiarColorNegro(){
 }
 function transparente(){
   movimiento.style.visibility = 'hidden';
+}
+
+
+//Ajusta el tamaño de la animacion a las diferentes pantallas
+function calculaAnimacion(){
+  /*Calculo el alto*/
+  var animacionContenedorHeight=(window.screen.height*82)/100;//Height de right
+  animacionContenedorHeight=(animacionContenedorHeight*90)/100;//Height de info2
+  animacionContenedorHeight=(animacionContenedorHeight*96)/100;//Height calculado para base
+  document.getElementById("base").style.Height=animacionContenedorHeight + "px";
+  console.log("elemento" + document.getElementById("base"))
+
+  /*Calculo el ancho*/
+  var animacionContenedorWidth=(window.screen.width*50)/100;//Width de right
+  animacionContenedorWidth = (animacionContenedorWidth*90)/100;//With de info2, es igual que el div contenedor (animacion)
+  animacionContenedorWidth = (animacionContenedorWidth*80)/100;//Width calculado para base
+  document.getElementById("base").style.Width=animacionContenedorHeight +"px";
 }
