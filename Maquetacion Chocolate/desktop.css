@@ -38,13 +38,39 @@ html{
     
     /*BODY*/
     #botones{
-        margin-left: auto;
+        margin-left: 48%;
         margin-right: auto;
-        width: 20%;
-        height: 50%;
-        border-radius: 0.5em;
-        margin-left: 40%;
+        width: auto;
         position: absolute;
+    }
+
+    #botones ul{
+        list-style: none;
+        margin: 0;
+        padding: 0px;
+    }
+    
+    #botones ul li{
+        display: inline-block;
+    }
+
+    #Bdatos{
+        background-color: rgb(106, 255, 47);
+        border: none;
+        border-radius: 0.5em;
+        box-shadow: 0px 0px 5px rgb(106, 255, 47);
+        opacity: 0.8;
+        outline: none;
+        margin-right: 20px;
+    }
+
+    #Banimacion{
+        background-color: rgb(106, 255, 47);
+        border: none;
+        border-radius: 0.5em;
+        box-shadow: 0px 0px 5px rgb(106, 255, 47);
+        opacity: 0.8;
+        outline: none;
     }
     
     #left{
@@ -63,30 +89,9 @@ html{
         transition: width 1.5s;
     }
     
-    #botones ul{
-        list-style: none;
-        margin: 0;
-    }
     
-    #botones ul li{
-        display: inline-block;
-    }
     
-    #datos{
-        background-color: rgb(106, 255, 47);
-        border: none;
-        border-radius: 0.5em;
-        box-shadow: 0px 0px 5px rgb(106, 255, 47);
-        opacity: 0.8;
-    }
-    
-    #animacion2{
-        background-color: rgb(106, 255, 47);
-        border: none;
-        border-radius: 0.5em;
-        box-shadow: 0px 0px 5px rgb(106, 255, 47);
-        opacity: 0.8;
-    }
+   
     
     #datos:hover{
         opacity: 1;
