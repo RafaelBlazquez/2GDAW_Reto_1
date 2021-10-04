@@ -100,7 +100,7 @@ html{
         height: 50%;
         position: absolute;
         margin-left: 10%;
-        margin-top: 45%;
+        margin-top: 320px;
         opacity: 1;
         transition: opacity 1s;
     }
@@ -165,8 +165,8 @@ html{
     }
 
     .led{
-        height: 1.2pc;
-        width: 1.2pc;
+        height: 0.6pc;
+        width: 0.6pc;
         background: radial-gradient(circle, rgba(7,255,2,1) 38%, rgba(15,117,20,1) 92%);
         box-shadow: 0 0 5px rgb(9, 197, 6);
         border-radius: 50%;
