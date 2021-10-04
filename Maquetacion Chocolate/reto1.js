@@ -2,6 +2,7 @@ var datosbt;
 var animacionbt
 var datosActivo=true;
 var animacionActivo=true;
+var graficoPos = true;
 
 
 function datosF(){
@@ -108,11 +109,23 @@ function animacionF(){
     }*/
 }
 
+function cambiarGraficos() {
+    if (graficoPos) {
+        document.getElementById("columnchart_values").style.opacity = "0";
+        document.getElementById("hiddeninfo").style.opacity = "1";
+        graficoPos = false;
+    }
+    else {
+        document.getElementById("columnchart_values").style.opacity = "1";
+        document.getElementById("hiddeninfo").style.opacity = "0";
+        graficoPos = true;
+    }
+}
 
 document.getElementById("iniciarbtn").addEventListener('click', function(){
 document.getElementById("iniciarbtn").style.background="radial-gradient(circle, rgba(7,255,2,1) 38%, rgba(15,117,20,1) 92%)";
 });
-
+document.getElementById("botonMostrar").addEventListener("click",cambiarGraficos);
 
 
 
