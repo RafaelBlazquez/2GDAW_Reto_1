@@ -1,13 +1,9 @@
 var datosbt;
 var animacionbt
 var datosActivo=true;
-<<<<<<< HEAD
 var animacionActivo=true;
 var graficoPos = true;
 
-=======
-var animacionActivo=false;
->>>>>>> 8176d274d6931ca4145e73d9b6a9aa06e2701ed1
 
 function datosF(){
     if(datosActivo==true && animacionActivo==true){
@@ -65,7 +61,6 @@ function animacionF(){
     }
 }
 
-<<<<<<< HEAD
 function cambiarGraficos() {
     if (graficoPos) {
         document.getElementById("columnchart_values").style.opacity = "0";
@@ -79,8 +74,6 @@ function cambiarGraficos() {
     }
 }
 
-=======
->>>>>>> 8176d274d6931ca4145e73d9b6a9aa06e2701ed1
 document.getElementById("iniciarbtn").addEventListener('click', function(){
 document.getElementById("iniciarbtn").style.background="radial-gradient(circle, rgba(7,255,2,1) 38%, rgba(15,117,20,1) 92%)";
 });

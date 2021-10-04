@@ -112,18 +112,12 @@ html{
     
     .info2{
         height: 0%;
-<<<<<<< HEAD
-        padding-bottom: 50%;
-        width: 50%;
-        position: absolute;
-=======
         padding-bottom:80%;
         width: 80%;
         max-width: 80%;
         max-height: 80%;
         margin: auto;
         position: relative;
->>>>>>> 8176d274d6931ca4145e73d9b6a9aa06e2701ed1
     }
     
     #columnchart_values{
@@ -154,6 +148,10 @@ html{
         opacity: 0;
         transition: opacity 1s;
         display: inline-block;
+    }
+
+    #mobileButton {
+        display: none;
     }
        
     /*TABLA*/
