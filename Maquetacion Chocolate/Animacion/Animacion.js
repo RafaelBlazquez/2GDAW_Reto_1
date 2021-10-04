@@ -4,12 +4,14 @@ var posX2 = false;
 var posX3 = false;
 
 var currentY = 0;
-var posicionOBJN = 0;
+
 var circulosNegros = [document.getElementById('unouno'),document.getElementById('unodos'),document.getElementById('unotres'),document.getElementById('unocuatro'),document.getElementById('unocinco')];
-console.log(circulosNegros);
-var posicionOBJB = 0;
+var posicionOBJN = 0;
+
+
 var circulosBlancos = [document.getElementById('dosuno'),document.getElementById('dosdos'),document.getElementById('dostres'),document.getElementById('doscuatro'),document.getElementById('doscinco')];
-console.log(circulosBlancos);
+var posicionOBJB = 0;
+
 var txokCogido = false;
 var arrayBlancos =['uno-blanco','dos-blanco','tres-blanco','cuatro-blanco','cinco-blanco'];
 var arrayNegros =['uno-negro','dos-negro','tres-negro','cuatro-negro','cinco-negro'];
@@ -19,108 +21,87 @@ var truefalse=[0,0,1,1,0,1,1,0,1,0];
 //empieza aqui:
 window.onload = empezar();
 
-window.addEventListener('resize', calculaAnimacion);
-
-function empezar(){
-  calculaAnimacion();
-
-  var movimiento = document.getElementById('movimiento');
-  movimiento.style.visibility = 'visible';
-  movimiento.style.background = 'rgb(80, 76, 76)';
-  var valvula = document.getElementById('valvula');
-  movimiento.style.marginTop= '0%';
-  movimiento.style.marginLeft='82%';
-  //condicion para saber si la valvula esta al inicio
-  /*Datos de prueba*/
-  posX3=true;
-  currentY=5;
-  if(posX3 && currentY ==5){
-
-    //condicion para saber si la valvula esta en el sensor
+  function empezar(){
+    var movimiento = document.getElementById('movimiento');
+    movimiento.style.visibility = 'visible';
+    movimiento.style.background = 'rgb(80, 76, 76)';
+    var valvula = document.getElementById('valvula');
+    movimiento.style.marginTop= '0%';
+    movimiento.style.marginLeft='82%';
+    //condicion para saber si la valvula esta al inicio
     /*Datos de prueba*/
-    posX2=true;
-    currentY=2;
-    if(posX2 && currentY ==2){
+    posX3=true;
+    currentY=5;
+    if(posX3 && currentY ==5){
+      //condicion para saber si la valvula esta en el sensor
+      /*Datos de prueba*/
+      posX2=true;
+      currentY=2;
+      if(posX2 && currentY ==2){
 
-      //mover valvula hasta el sensor
-      irSensor();
-      
-      //recibir datos sensor
-      /*truefalse y contador --> Datos de prueba*/
-      resultadoSensor= truefalse[contador];
-
-      if(resultadoSensor==0){
-        contador++;
-        window.setTimeout(siguienteBlanco, 3000);
-      }
-      else{
-        contador++;
-        console.log(contador);
-        window.setTimeout(siguienteNegro, 3000);
+        //mover valvula hasta el sensor
+        irSensor();
         
+        //recibir datos sensor
+        /*truefalse y contador --> Datos de prueba*/
+        resultadoSensor= truefalse[contador];
+        if(resultadoSensor==0){
+          contador++;
+          window.setTimeout(siguienteBlanco, 3000);
+        }
+        else{
+          contador++;
+          console.log(contador);
+          window.setTimeout(siguienteNegro, 3000);
+          
+        }
+        window.setTimeout(transparente,8000);
+        valvula.style.visibility= 'visible';
       }
-      window.setTimeout(transparente,8000);
-      valvula.style.visibility= 'visible';
+    }
+    else{
+      window.setTimeout(empezar,500);
+      contadorpreguntas++;
     }
   }
-  else{
-    window.setTimeout(empezar,500);
-    contadorpreguntas++;
+  
+  function irSensor(){
+    movimiento.style.animationName = 'irSensor';
+    movimiento.style.animationDuration  ='3s';
+  }
+
+  function siguienteBlanco(){
+    movimiento.style.animationName =arrayBlancos[posicionOBJB];
+    movimiento.style.animationDuration  ='10s';
+    movimiento.style.background = 'wheat';
+    window.setTimeout(cambiarColorBlanco, 5000);
+  }
+
+  function cambiarColorBlanco(){
+    circulosBlancos[posicionOBJB].style.background = 'wheat';
+    posicionOBJB++;
+    if(contador<=9){
+      window.setTimeout(empezar, 5000);
+    }
+  }
+
+  function siguienteNegro(){
+    movimiento.style.animationName =arrayNegros[posicionOBJN];
+    movimiento.style.animationDuration  ='10s';
+    movimiento.style.background = 'rgb(100, 70, 40)';
+    window.setTimeout(cambiarColorNegro, 5000);
+  }
+
+  function cambiarColorNegro(){
+    circulosNegros[posicionOBJN].style.background = 'rgb(100, 70, 40)';
+    posicionOBJN++;
+    
+    if(contador<=9){
+    window.setTimeout(empezar, 5000);
+    }
+  }
+  function transparente(){
+    movimiento.style.visibility = 'hidden';
   }
 
 
-}
-
-function irSensor(){
-  movimiento.style.animationName = 'irSensor';
-  movimiento.style.animationDuration  ='3s';
-}
-
-function siguienteBlanco(){
-  movimiento.style.animationName =arrayBlancos[posicionOBJB];
-  movimiento.style.animationDuration  ='10s';
-  movimiento.style.background = 'wheat';
-  window.setTimeout(cambiarColorBlanco, 5000);
-}
-function siguienteNegro(){
-
-  movimiento.style.animationName =arrayNegros[posicionOBJN];
-  movimiento.style.animationDuration  ='10s';
-  movimiento.style.background = 'rgb(100, 70, 40)';
-  window.setTimeout(cambiarColorNegro, 5000);
-}
-function cambiarColorBlanco(){
-  circulosBlancos[posicionOBJB].style.background = 'wheat';
-  posicionOBJB++;
-  
-  if(contador<=9)
-  window.setTimeout(empezar, 5000);
-
-}
-function cambiarColorNegro(){
-  circulosNegros[posicionOBJN].style.background = 'rgb(100, 70, 40)';
-  posicionOBJN++;
-  
-  if(contador<=9)
-  window.setTimeout(empezar, 5000);
-}
-function transparente(){
-  movimiento.style.visibility = 'hidden';
-}
-
-
-//Ajusta el tamaño de la animacion a las diferentes pantallas
-function calculaAnimacion(){
-  /*Calculo el alto*/
-  var animacionContenedorHeight=(window.screen.height*82)/100;//Height de right
-  animacionContenedorHeight=(animacionContenedorHeight*90)/100;//Height de info2
-  animacionContenedorHeight=(animacionContenedorHeight*96)/100;//Height calculado para base
-  document.getElementById("base").style.Height=animacionContenedorHeight + "px";
-  console.log("elemento" + document.getElementById("base"))
-
-  /*Calculo el ancho*/
-  var animacionContenedorWidth=(window.screen.width*50)/100;//Width de right
-  animacionContenedorWidth = (animacionContenedorWidth*90)/100;//With de info2, es igual que el div contenedor (animacion)
-  animacionContenedorWidth = (animacionContenedorWidth*80)/100;//Width calculado para base
-  document.getElementById("base").style.Width=animacionContenedorHeight +"px";
-}

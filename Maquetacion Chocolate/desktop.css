@@ -112,9 +112,12 @@ html{
     
     .info2{
         height: 0%;
-        padding-bottom: 50%;
-        width: 50%;
-        position: absolute;
+        padding-bottom:80%;
+        width: 80%;
+        max-width: 80%;
+        max-height: 80%;
+        margin: auto;
+        position: relative;
     }
     
     #columnchart_values{
