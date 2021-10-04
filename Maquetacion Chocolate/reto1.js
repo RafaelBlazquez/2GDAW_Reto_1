@@ -34,7 +34,7 @@ function datosF(){
 
 }
 
-document.addEventListener("DOMContentLoaded", animacionF);
+
 
 function animacionF(){
     console.log("AAKJFDNSF")
