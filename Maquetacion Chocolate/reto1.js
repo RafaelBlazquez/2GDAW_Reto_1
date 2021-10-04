@@ -35,7 +35,6 @@ function datosF(){
 }
 
 
-
 function animacionF(){
     console.log("AAKJFDNSF")
     if(datosActivo==true && animacionActivo==true){
