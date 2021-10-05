@@ -3,7 +3,7 @@ var posX1 = true;
 var posX2 = false;
 var posX3 = false;
 
-var currentY = 0;
+var currentY = document.getElementById('currentY');
 
 var circulosNegros = [document.getElementById('unouno'),document.getElementById('unodos'),document.getElementById('unotres'),document.getElementById('unocuatro'),document.getElementById('unocinco')];
 var posicionOBJN = 0;
@@ -20,8 +20,9 @@ var contadorpreguntas=0;
 var truefalse=[0,0,1,1,0,1,1,0,1,0];
 //empieza aqui:
 window.onload = empezar();
-
+  
   function empezar(){
+    console.log(document.getElementById('currentY').value);
     var movimiento = document.getElementById('movimiento');
     movimiento.style.visibility = 'visible';
     movimiento.style.background = 'rgb(80, 76, 76)';
