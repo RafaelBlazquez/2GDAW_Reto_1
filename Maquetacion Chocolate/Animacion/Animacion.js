@@ -22,7 +22,7 @@ var truefalse=[0,0,1,1,0,1,1,0,1,0];
 window.onload = empezar();
   
   function empezar(){
-    console.log(document.getElementById('currentY').value);
+  
     var movimiento = document.getElementById('movimiento');
     movimiento.style.visibility = 'visible';
     movimiento.style.background = 'rgb(80, 76, 76)';
@@ -34,15 +34,13 @@ window.onload = empezar();
     posX3=true;
     currentY=5;
     if(posX3 && currentY ==5){
+       //mover valvula hasta el sensor
+       irSensor();
       //condicion para saber si la valvula esta en el sensor
       /*Datos de prueba*/
       posX2=true;
       currentY=2;
       if(posX2 && currentY ==2){
-
-        //mover valvula hasta el sensor
-        irSensor();
-        
         //recibir datos sensor
         /*truefalse y contador --> Datos de prueba*/
         resultadoSensor= truefalse[contador];
