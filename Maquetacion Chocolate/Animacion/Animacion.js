@@ -103,4 +103,58 @@ window.onload = empezar();
     movimiento.style.visibility = 'hidden';
   }
 
+//Programacion de las luces de colores
+/**/ 
+var boolrojo = false;
+var boolamarillo = false;
+var boolverde = false;
+var boolazul = false;
 
+var rojo =document.getElementById('rojo');
+var amarillo =document.getElementById('amarillo');
+var verde =document.getElementById('verde');
+var azul =document.getElementById('azul');
+//Funcion que llama a cambiolucescolor 1 parametro
+function cambioDeLuces(color){
+    switch(color){
+        case 'rojo':
+            if (boolrojo){
+                rojo.style = 'radial-gradient(circle, rgba(87,87,87,1) 0%, rgba(50,50,50,1) 100%)';
+            }
+            else{
+                rojo.style.background = ' radial-gradient(circle, rgb(255, 2, 2) 38%, rgb(117, 15, 15) 92%)';
+                rojo.style.boxShadow = ' 0 0 5px rgb(197, 6, 6)';
+            }
+            break;
+
+        case 'amarillo':
+            if (boolamarillo){
+                amarillo.style = 'radial-gradient(circle, rgba(87,87,87,1) 0%, rgba(50,50,50,1) 100%)';
+            }
+            else{
+                amarillo.style.background = 'radial-gradient(circle, rgb(255, 238, 2) 38%, rgb(117, 107, 15) 92%)';
+                amarillo.style.boxShadow = '0 0 5px rgb(197, 194, 6)';
+            }
+            break;
+
+        case 'verde':
+        if (boolverde){
+                verde.style = 'radial-gradient(circle, rgba(87,87,87,1) 0%, rgba(50,50,50,1) 100%)';
+            }
+            else{
+                verde.style.background = 'radial-gradient(circle, rgba(7,255,2,1) 38%, rgba(15,117,20,1) 92%)';
+                verde.style.boxShadow = '0 0 5px rgb(9, 197, 6)';
+            }
+            break;
+
+        case 'azul':
+            if (boolazul){
+                azul.style = 'radial-gradient(circle, rgba(87,87,87,1) 0%, rgba(50,50,50,1) 100%)';
+            }
+            else{
+                azul.style.background = 'radial-gradient(circle, rgb(2, 69, 255) 38%, rgb(15, 17, 117) 92%)';
+                azul.style.boxShadow = '0 0 5px rgb(9, 6, 197)';
+            }
+            break;
+    }
+}

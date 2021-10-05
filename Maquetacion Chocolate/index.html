@@ -11,7 +11,9 @@
     <link rel="icon" href="./logo.png" type="image/x-icon">
     <!--SCRIPTS GRAFICOS-->
     <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script src="jquery-3.6.0.min.js"></script>
     <script type="text/javascript">
+    
         google.charts.load("current", {packages:['corechart']});
         google.charts.setOnLoadCallback(drawChart);
         function drawChart() {
@@ -150,6 +152,7 @@
                         </tr>
                         <tr>
                             <td><div class="led2"></div></td>
+                            <td><div class="led2 colores" id="rojo"></div></td>
                         </tr>
 
 
@@ -158,6 +161,7 @@
                         </tr>
                         <tr>
                             <td><div class="led2"></div></td>
+                            <td><div class="led2 colores" id="amarillo"></div></td>
                         </tr>
 
                         <tr> 
@@ -165,7 +169,16 @@
                         </tr>
                         <tr>
                             <td><div class="led2"></div></td>
+                            <td><div class="led2 colores" id="verde"></div></td>
                         </tr>
+                        <tr>
+                            <td><p></p></td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td><div class="led2 colores" id="azul"></div></td>
+                        </tr>
+                        
                         
                     </tbody>
                 </table>
@@ -238,5 +251,23 @@
         <img alt="Licencia de Creative Commons" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png" />
     </footer>
     <script src="./reto1.js"></script>
+    <!--  /////////////////////////////////////////////////////
+    //////////////////////////////////////////////////////  -->
+    <div id="variables" style="display: none;">
+        <div id="currentY"></div>
+
+    </div>
+    <script type="text/javascript">
+        $(document).ready(function(){
+            $.ajaxSetup({ cache: false});
+        setInterval(function(){
+            $.get("leerVariables.html",function(result){
+                $('#currentY').text(result.trim());
+            });
+        },1000);
+        });
+
+    </script>
+    
 </body>
 </html>
