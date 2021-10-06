@@ -3,7 +3,7 @@ var posX1 = true;
 var posX2 = false;
 var posX3 = false;
 
-var currentY = 0;
+var currentY = document.getElementById('currentY');
 
 var circulosNegros = [document.getElementById('unouno'),document.getElementById('unodos'),document.getElementById('unotres'),document.getElementById('unocuatro'),document.getElementById('unocinco')];
 var posicionOBJN = 0;
@@ -20,8 +20,23 @@ var contadorpreguntas=0;
 var truefalse=[0,0,1,1,0,1,1,0,1,0];
 //empieza aqui:
 window.onload = empezar();
-
+  
   function empezar(){
+	 
+	$(document).ready(function(){
+            
+        setInterval(function() {
+			
+            $.get("leerVariables.html", function(result){
+				console.log(result);
+                $('#posX1').text(result.trim());
+				
+            });
+        },1000);
+        });
+		
+	  console.log(document.getElementById("currentpY"));
+  
     var movimiento = document.getElementById('movimiento');
     movimiento.style.visibility = 'visible';
     movimiento.style.background = 'rgb(80, 76, 76)';
@@ -33,15 +48,13 @@ window.onload = empezar();
     posX3=true;
     currentY=5;
     if(posX3 && currentY ==5){
+       //mover valvula hasta el sensor
+       irSensor();
       //condicion para saber si la valvula esta en el sensor
       /*Datos de prueba*/
       posX2=true;
       currentY=2;
       if(posX2 && currentY ==2){
-
-        //mover valvula hasta el sensor
-        irSensor();
-        
         //recibir datos sensor
         /*truefalse y contador --> Datos de prueba*/
         resultadoSensor= truefalse[contador];
@@ -104,4 +117,58 @@ window.onload = empezar();
     movimiento.style.visibility = 'hidden';
   }
 
+//Programacion de las luces de colores
+/**/ 
+var boolrojo = false;
+var boolamarillo = false;
+var boolverde = false;
+var boolazul = false;
 
+var rojo =document.getElementById('rojo');
+var amarillo =document.getElementById('amarillo');
+var verde =document.getElementById('verde');
+var azul =document.getElementById('azul');
+//Funcion que llama a cambiolucescolor 1 parametro
+function cambioDeLuces(color){
+    switch(color){
+        case 'rojo':
+            if (boolrojo){
+                rojo.style = 'radial-gradient(circle, rgba(87,87,87,1) 0%, rgba(50,50,50,1) 100%)';
+            }
+            else{
+                rojo.style.background = ' radial-gradient(circle, rgb(255, 2, 2) 38%, rgb(117, 15, 15) 92%)';
+                rojo.style.boxShadow = ' 0 0 5px rgb(197, 6, 6)';
+            }
+            break;
+
+        case 'amarillo':
+            if (boolamarillo){
+                amarillo.style = 'radial-gradient(circle, rgba(87,87,87,1) 0%, rgba(50,50,50,1) 100%)';
+            }
+            else{
+                amarillo.style.background = 'radial-gradient(circle, rgb(255, 238, 2) 38%, rgb(117, 107, 15) 92%)';
+                amarillo.style.boxShadow = '0 0 5px rgb(197, 194, 6)';
+            }
+            break;
+
+        case 'verde':
+        if (boolverde){
+                verde.style = 'radial-gradient(circle, rgba(87,87,87,1) 0%, rgba(50,50,50,1) 100%)';
+            }
+            else{
+                verde.style.background = 'radial-gradient(circle, rgba(7,255,2,1) 38%, rgba(15,117,20,1) 92%)';
+                verde.style.boxShadow = '0 0 5px rgb(9, 197, 6)';
+            }
+            break;
+
+        case 'azul':
+            if (boolazul){
+                azul.style = 'radial-gradient(circle, rgba(87,87,87,1) 0%, rgba(50,50,50,1) 100%)';
+            }
+            else{
+                azul.style.background = 'radial-gradient(circle, rgb(2, 69, 255) 38%, rgb(15, 17, 117) 92%)';
+                azul.style.boxShadow = '0 0 5px rgb(9, 6, 197)';
+            }
+            break;
+    }
+}

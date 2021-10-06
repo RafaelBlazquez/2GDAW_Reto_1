@@ -18,14 +18,24 @@ header {
 
 header p {
     font-size: 1.5em;
-    margin-left: 30%;
+    margin-left: 25%;
     display: inline-block;
     text-align: center;
     color: wheat;
     font-family: 'Times New Roman', Times, serif;
     margin-top: 3%;
 }
-
+#logo{
+    display: block;
+    width: 40%;
+    background-color: aqua;
+    position: relative;
+}
+#imglogo{
+    position: absolute;
+    max-width: 40%;
+    margin-top: 0%;
+}
 #mainBotones {
     display: none;
 }
@@ -84,13 +94,15 @@ footer img{
 .info2 {
     margin-top: 0px;
 
-    height: 90%;
+    height: 0%;
+    padding-bottom: 90%;
     width: 90%;
     margin-left: auto;
     margin-right: auto;
     /*background-color: black;*/
     opacity: 0.85;
     /*box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);*/
+    position: relative;
     overflow: hidden;
 }
 
@@ -162,6 +174,12 @@ footer img{
     border-radius: 50%;
     margin-left: auto;
     margin-right: auto;
+}
+.colores{
+    border-radius: 0%;
+    width: 1.1pc;
+    background:radial-gradient(circle, rgba(87,87,87,1) 0%, rgba(50,50,50,1) 100%);
+    box-shadow: 0 0 0px rgb(9, 197, 6);
 }
 
 #iniciarbtn{
