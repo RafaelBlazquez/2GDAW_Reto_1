@@ -3,7 +3,7 @@ var posX1 = true;
 var posX2 = false;
 var posX3 = false;
 
-var currentY = document.getElementById('currentY');
+
 
 var circulosNegros = [document.getElementById('unouno'),document.getElementById('unodos'),document.getElementById('unotres'),document.getElementById('unocuatro'),document.getElementById('unocinco')];
 var posicionOBJN = 0;
@@ -30,12 +30,21 @@ window.onload = empezar();
             $.get("leerVariables.html", function(result){
 				console.log(result);
                 $('#posX1').text(result.trim());
-				
+                var datos=result;
+                var arrayDatos=datos.split(' ');
+                console.log(arrayDatos);
+                var currentpY = arrayDatos[0];
+                var posX1 = arrayDatos[1];
+                var posX2 = arrayDatos[2];
+                var posX3 = arrayDatos[3];
+                console.log('posX1: '+ posX1);
+                console.log('posX2: '+ posX2);
+                console.log('posX3: '+ posX3);
             });
         },1000);
         });
 		
-	  console.log(document.getElementById("currentpY"));
+
   
     var movimiento = document.getElementById('movimiento');
     movimiento.style.visibility = 'visible';
@@ -46,15 +55,15 @@ window.onload = empezar();
     //condicion para saber si la valvula esta al inicio
     /*Datos de prueba*/
     posX3=true;
-    currentY=5;
-    if(posX3 && currentY ==5){
+    currentpY=5;
+    if(posX3 && currentpY ==5){
        //mover valvula hasta el sensor
        irSensor();
       //condicion para saber si la valvula esta en el sensor
       /*Datos de prueba*/
       posX2=true;
-      currentY=2;
-      if(posX2 && currentY ==2){
+      currentpY=2;
+      if(posX2 && currentpY ==2){
         //recibir datos sensor
         /*truefalse y contador --> Datos de prueba*/
         resultadoSensor= truefalse[contador];
