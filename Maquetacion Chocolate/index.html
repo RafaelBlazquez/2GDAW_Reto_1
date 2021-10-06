@@ -1,3 +1,4 @@
+<!-- AWP_In_Variable Name='"mis_datos".posX1' -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -253,21 +254,8 @@
     <script src="./reto1.js"></script>
     <!--  /////////////////////////////////////////////////////
     //////////////////////////////////////////////////////  -->
-    <div id="variables" style="display: none;">
-        <div id="currentY"></div>
-
-    </div>
-    <script type="text/javascript">
-        $(document).ready(function(){
-            $.ajaxSetup({ cache: false});
-        setInterval(function(){
-            $.get("leerVariables.html",function(result){
-                $('#currentY').text(result.trim());
-            });
-        },1000);
-        });
-
-    </script>
+    
+   
     
 </body>
 </html>

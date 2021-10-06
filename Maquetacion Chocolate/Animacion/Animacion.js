@@ -22,6 +22,20 @@ var truefalse=[0,0,1,1,0,1,1,0,1,0];
 window.onload = empezar();
   
   function empezar(){
+	 
+	$(document).ready(function(){
+            
+        setInterval(function() {
+			
+            $.get("leerVariables.html", function(result){
+				console.log(result);
+                $('#posX1').text(result.trim());
+				
+            });
+        },1000);
+        });
+		
+	  console.log(document.getElementById("currentpY"));
   
     var movimiento = document.getElementById('movimiento');
     movimiento.style.visibility = 'visible';
