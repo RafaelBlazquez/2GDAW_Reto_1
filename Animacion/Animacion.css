@@ -1,27 +1,13 @@
-*{
-    height: 100%;
+#base{
+    max-height: 520px;
+    max-width: 520px;
     width: 100%;
-    margin-top: 0%;
-    margin-left: 0%;
-}
-
-div#animacion{
     height: 100%;
-    width: 50%;
-    background-color: blue; 
-    position: absolute;
-}
-div#base{
-    width: 500px;
-    height: 500px;
-    margin-left:25%;
-    margin-top:25%;
     background: linear-gradient(47deg, rgba(180,180,180,1) 18%, rgba(156,156,156,1) 84%);
-    overflow-y: auto;
-    overflow-x: auto;
-    position: inherit;
+    position: absolute;
     box-shadow:  -3px 3px black;
     border-radius: 5%;
+
 }
 div .circulo{
         width: 15%;
