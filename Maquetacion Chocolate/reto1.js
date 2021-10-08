@@ -73,9 +73,7 @@ function cambiarGraficos() {
     }
 }
 
-document.getElementById("iniciarbtn").addEventListener('click', function(){
-document.getElementById("iniciarbtn").style.background="radial-gradient(circle, rgba(7,255,2,1) 38%, rgba(15,117,20,1) 92%)";
-});
+
 document.getElementById("botonMostrar").addEventListener("click",cambiarGraficos);
 
 
