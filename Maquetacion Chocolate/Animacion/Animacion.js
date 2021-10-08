@@ -8,6 +8,7 @@ var arrayNegros =['uno-negro','dos-negro','tres-negro','cuatro-negro','cinco-neg
 var contador=0;
 var contadorpreguntas=0;
 
+  var equis;
   var rojo =document.getElementById('rojo');
   var amarillo =document.getElementById('amarillo');
   var verde =document.getElementById('verde');
@@ -21,7 +22,22 @@ var contadorpreguntas=0;
   var ledPos3 = document.getElementById('ledPosX3');  
   var posOBJB = document.getElementById('posOBJB');  
   var posOBJN = document.getElementById('posOBJN');  
-  
+  var grafico1 = document.getElementById("columnchart_values");
+  var grafico2 = document.getElementById("hiddeninfo");
+  var posX1;
+  var posX2;
+  var posX3;
+  var movimiento;
+  var currentpY;
+  var txokCogido;
+  var luzAmarilla;
+  var luzRoja;
+  var luzAzul;
+  var luzVerde;
+  var marcaBlanco;
+  var marcaNegro;
+  var chocolate;
+  var valvula; 
 //empieza aqui:
 window.onload = empezar();
   
@@ -67,20 +83,27 @@ function empezar(){
         },1000);
         });
        
-        var chocolate = document.getElementById('chocolate');
+      apareceValvula();
+      actualizaciones();
+}
+        //Variables de prueba
+      function apareceValvula(){
+        chocolate = document.getElementById('chocolate');
         chocolate.style.visibility = 'hidden';
         chocolate.style.background = 'rgb(80, 76, 76)';
-        var valvula = document.getElementById('valvula');
+        valvula = document.getElementById('valvula');
         valvula.style.visibility = 'visible';
         chocolate.style.marginTop= '0%';
         chocolate.style.marginLeft='82%';
-
-        //Variables de prueba
-        
+}
+function actualizaciones(){
+      /*setInterval(posicionesX(),1000); 
+      setInterval(actualizarGrafico1(),1000);
+      setInterval(actualizarGrafico2(),1000);*/
       setInterval(actualizarLuces(),1000);
       setInterval(actualizarLeds(),1000);
       setInterval(actualizarTabla(),1000);
-}
+  }
     
 function iniciarCiclo(){
     //mover valvula hasta el sensor
@@ -329,8 +352,8 @@ function actualizarLeds(){
   }
 }
 function actualizarTabla(){
-  posicionY.text(currentpY);
-  
+  posicionY.innerHTML = currentpY;
+	
   if(posX1){
     encenderLed('ledPos1');
   }
@@ -349,8 +372,8 @@ function actualizarTabla(){
   else{
     apagarLed('ledPos3');
   }
-  posOBJB.text(posicionOBJB);
-  posOBJN.text(posicionOBJN);
+  posOBJB.innerHTML = posicionOBJB;
+  posOBJN.innerHTML = posicionOBJN;
 }
 
 
