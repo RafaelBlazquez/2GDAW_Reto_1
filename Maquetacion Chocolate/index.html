@@ -23,7 +23,6 @@
             ["Posicion X", 8.94, "silver"],
             ["Posicion Y", 10.49, "grey"],
           ]);
-          console.log(data);
     
           var view = new google.visualization.DataView(data);
           view.setColumns([0, 1,
@@ -62,9 +61,6 @@
                              role: "annotation" },
                            2]);
     
-    var element = document.getElementById('infodiv');
-    var positionInfo = element.getBoundingClientRect();
-    var ancho = positionInfo.width;
 
           var options = {
             title: "Datos Chocolates 2",
