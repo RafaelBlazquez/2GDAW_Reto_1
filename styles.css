@@ -1,0 +1,282 @@
+html{
+    height: 100%;
+    width: 100%;
+    margin: 0%;
+}
+
+body{
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    background-color: black;
+    overflow: hidden;
+}
+
+/*HEADER*/
+header{
+    height: 8%;
+    width: 100%;
+    background-color: rgb(46, 25, 6);
+    position: relative;
+}
+
+header p{
+    font-size: 2.5pc;
+    color: wheat;
+    margin-top: 3%;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+#logo{
+    display: block;
+    background-color: aqua;
+    position: relative;
+}
+
+#imglogo{
+    position: absolute;
+    max-width: 40%;
+    margin-top: 3%;
+    margin-left: 10%;
+}
+
+#mainBotones{
+    width: 100%;
+    height: 31px;
+    background-color: rgb(46, 25, 6);
+}
+
+/*BODY*/
+#botones{
+    margin-left: 48%;
+    margin-right: auto;
+    width: auto;
+    position: absolute;
+}
+
+#botones ul{
+    list-style: none;
+    margin: 0;
+    padding: 0px;
+}
+
+#botones ul li{
+    display: inline-block;
+}
+
+#Bdatos{
+    background-color: rgb(106, 255, 47);
+    border: none;
+    border-radius: 0.5em;
+    box-shadow: 0px 0px 5px rgb(106, 255, 47);
+    opacity: 0.8;
+    outline: none;
+    margin-right: 20px;
+}
+
+#Banimacion{
+    background-color: rgb(106, 255, 47);
+    border: none;
+    border-radius: 0.5em;
+    box-shadow: 0px 0px 5px rgb(106, 255, 47);
+    opacity: 0.8;
+    outline: none;
+}
+   
+#Bdatos:hover{
+    opacity: 1;
+}
+
+#Banimacion:hover{
+    opacity: 1;
+}
+
+/*BODY*/
+#left{
+    float: left;
+    width: 50%;
+    height: 81%;
+    background-color: rgb(70, 54, 38);
+    transition: width 1.5s;
+}
+
+#right{ 
+    float: left;
+    width: 50%;
+    height:81%;
+    background: wheat;
+    transition: width 1.5s;
+}
+
+.info{
+    height: 90%;
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 35px;
+    background-color: white;
+    opacity: 0.85;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+    position: relative;
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
+
+.info2{
+    height: 0%;
+    margin-left: auto;
+    margin-right: auto;
+    /*background-color: black;*/
+    opacity: 0.85;
+    /*box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);*/
+    position: relative;
+    overflow: hidden;
+}
+
+
+/*TABLA*/
+.styled-table {
+    border-collapse: collapse;
+    font-size: 1.2pc;
+    font-family: sans-serif;
+    height: auto;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+    opacity: 1;
+    transition: opacity 0.85s;
+    position: absolute;
+    float: left;
+    margin-top: 40px;
+    margin-left: 5%;  
+}
+
+.styled-table thead tr {
+    background-color: #412d02;
+    color: #ffffff;
+    text-align: left;
+}
+
+.styled-table th,.styled-table td {
+    padding: 12px 15px;
+}
+
+.styled-table tbody tr {
+    border-bottom: 1px solid #dddddd;
+    background-color: #f3f3f3;
+}
+
+.styled-table tbody tr:last-of-type {
+    border-bottom: 2px solid #412d02;
+}
+
+    /*PANEL DE LEDS*/
+    #ledpanel{
+        width: 36%;
+        height: auto;
+        margin-top: 40px;
+        position: absolute;
+        float: right;
+    }
+
+    #ledtable{
+        margin: 0%;
+        text-align: center;
+        font-size: 1.2pc;
+        font-family: sans-serif;
+        width: 100%;
+        height: auto;
+    }
+
+    .led{
+        background: radial-gradient(circle, rgba(7,255,2,1) 38%, rgba(15,117,20,1) 92%);
+        box-shadow: 0 0 5px rgb(9, 197, 6);
+        border-radius: 50%;
+        display: inline-block;
+    }
+
+    .led2{
+        height: 1.2pc;
+        width: 1.2pc;
+        background: radial-gradient(circle, rgba(7,255,2,1) 38%, rgba(15,117,20,1) 92%);
+        box-shadow: 0 0 5px rgb(9, 197, 6);
+        border-radius: 50%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .colores{
+        border-radius: 0%;
+        width: 1.5pc;
+        background:radial-gradient(circle, rgba(87,87,87,1) 0%, rgba(50,50,50,1) 100%);
+        box-shadow: 0 0 0px rgb(9, 197, 6);
+    }
+
+    #iniciarbtn{
+        height: 4pc;
+        width: 4pc;
+        background: radial-gradient(circle, rgba(87,87,87,1) 0%, rgba(50,50,50,1) 100%);
+        border-radius: 50%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    
+    #iniciarbtn svg {
+        width: 3.5pc;
+        height: 3.5pc;
+        fill: white;
+        margin-left: 2.5%;
+        margin-top: 3.5%;
+    }
+
+    #enviar{
+        opacity: 0;
+        position: absolute;
+        width: 3.85pc;
+        height: 3.85pc;
+        margin-left: -1.83pc;
+        border-radius: 50%;
+    }
+
+/* GRAFICO */
+#columnchart_values{
+    width: 80%;
+    height: 50%;
+    position: absolute;
+    margin-left: 10%;
+    opacity: 1;
+    transition: opacity 1s;
+}
+
+#hiddeninfo{
+    position: absolute;
+    opacity: 0;
+    transition: opacity 1s;
+}
+
+#mobileButton {
+    display: none;
+}
+
+/*FOOTER*/
+footer{
+    height: 6%;
+    width: 100%;
+    background-color: rgb(46, 25, 6);
+    display: inline-block;
+    position: relative;
+}
+
+footer p{
+    color:wheat;
+    font-size: 1.7pc;
+    font-family: 'Times New Roman', Times, serif;
+    position: absolute;
+    margin-top: 0.5%;
+    margin-left: 2.4%;
+}
+
+footer img{
+    position: absolute;
+    right: 0;
+    margin-top: 0.5%;
+    margin-right: 2.5%;
+    border-width: 0;
+}

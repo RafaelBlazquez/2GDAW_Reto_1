@@ -1,0 +1,262 @@
+<!-- AWP_In_Variable Name='"web".posX1' -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chocolates Willy Wonka</title>
+    <link rel="stylesheet" href="./styles.css">
+    <link rel="stylesheet" href="./desktop.css">
+    <link rel="stylesheet" href="./tablet.css">
+    <link rel="stylesheet" href="./movil.css">
+    <link rel="icon" href="./logo.png" type="image/x-icon">
+    <!--SCRIPTS GRAFICOS-->
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script src="jquery-3.6.0.min.js"></script>
+    <script type="text/javascript">
+    
+        google.charts.load("current", {packages:['corechart']});
+        google.charts.setOnLoadCallback(drawChart);
+        function drawChart() {
+          var data = google.visualization.arrayToDataTable([
+            ["Dato", "Valor", { role: "style" } ],
+            ["Posicion X", 8.94, "silver"],
+            ["Posicion Y", 10.49, "grey"],
+          ]);
+    
+          var view = new google.visualization.DataView(data);
+          view.setColumns([0, 1,
+                           { calc: "stringify",
+                             sourceColumn: 1,
+                             type: "string",
+                             role: "annotation" },
+                           2]);
+    
+          var options = {
+            title: "Datos Chocolates",
+            width: document.getElementById("infodiv").style.width*80/100,
+            height: document.getElementById("infodiv").style.height*50/100,
+            bar: {groupWidth: "95%"},
+            legend: { position: "none" },
+          };
+          var chart = new google.visualization.ColumnChart(document.getElementById("columnchart_values"));
+          chart.draw(view, options);
+      }
+      </script>
+       <script type="text/javascript">
+        google.charts.load("current", {packages:['corechart']});
+        google.charts.setOnLoadCallback(drawChart);
+        function drawChart() {
+          var data = google.visualization.arrayToDataTable([
+            ["Dato", "Valor", { role: "style" } ],
+            ["Chocolate Blanco ", 19.30, "silver"],
+            ["Chocolate Negro", 21.45, "color: grey"],
+          ]);
+    
+          var view = new google.visualization.DataView(data);
+          view.setColumns([0, 1,
+                           { calc: "stringify",
+                             sourceColumn: 1,
+                             type: "string",
+                             role: "annotation" },
+                           2]);
+    
+    var element = document.getElementById('infodiv');
+    var positionInfo = element.getBoundingClientRect();
+    var ancho = positionInfo.width;
+
+          var options = {
+            title: "Datos Chocolates 2",
+            width: document.getElementById("infodiv").style.width*80/100,
+            height: document.getElementById("infodiv").style.height*50/100,
+            bar: {groupWidth: "95%"},
+            legend: { position: "none" },
+          };
+          var chart = new google.visualization.ColumnChart(document.getElementById("hiddeninfo"));
+          chart.draw(view, options);
+      }
+      </script>
+      <!--ANIMACION-->
+      <link rel="stylesheet" href="./Animacion/Animacion.css">
+    
+</head>
+<!--BODY-->
+<body>
+    <!--HEADER-->
+    <header>
+        <div id="logo"><img id="imglogo" src="./logo.png" alt="logo"> </div>
+        <p>Chocolates Willy Wonka</p>
+       
+    </header>
+    <div id="lecturaDeVariables">
+            
+    </div>
+    <div id="mainBotones">
+        <div id="botones">
+            <ul>
+                <li><button id="Bdatos" onclick="datosF()" title="Mostrar Datos"><svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-graph-up" viewBox="0 0 16 16">
+                    <path fill-rule="evenodd" d="M0 0h1v15h15v1H0V0zm10 3.5a.5.5 0 0 1 .5-.5h4a.5.5 0 0 1 .5.5v4a.5.5 0 0 1-1 0V4.9l-3.613 4.417a.5.5 0 0 1-.74.037L7.06 6.767l-3.656 5.027a.5.5 0 0 1-.808-.588l4-5.5a.5.5 0 0 1 .758-.06l2.609 2.61L13.445 4H10.5a.5.5 0 0 1-.5-.5z"/>
+                    </svg></button></li>
+            
+                <li><button id="Banimacion" onclick="animacionF()" title="Mostrar Animacion"><svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-caret-right-square" viewBox="0 0 16 16">
+                    <path d="M14 1a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1h12zM2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2z"/>
+                    <path d="M5.795 12.456A.5.5 0 0 1 5.5 12V4a.5.5 0 0 1 .832-.374l4.5 4a.5.5 0 0 1 0 .748l-4.5 4a.5.5 0 0 1-.537.082z"/>
+                  </svg></button></li>
+            </ul>
+        </div>
+    </div>
+
+    <!--DATOS-->
+    <aside id="left" >
+        <div class="info" id="infodiv">
+            <!--TABLA-->
+            <table id="tablainfo" class="styled-table">
+                <tbody>
+                    <tr> 
+                        <td>Posicion Y</td>
+                        <td>0</td>
+                    </tr>
+                    <tr>
+                        <td>Posicion X</td>
+                        <td><div class="led"></div>
+                            <div class="led" style="background-color: rgb(116, 116, 116);"></div>
+                            <div class="led" style="background-color: rgb(116, 116, 116);"></div></td>  
+                    </tr>
+
+                    <tr>
+                        <td>Posicion OBJB.</td>
+                        <td>0</td>
+                    </tr>
+
+                    <tr>
+                        <td>Posicion OBJN</td>
+                        <td>0</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div id="ledpanel" class="ledpanel">
+                <table id="ledtable">
+                    <tbody>
+                        <tr>
+                            <td>
+                                <div id="iniciarbtn">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="bi bi-power" viewBox="0 0 16 16">
+                                        <path d="M7.5 1v7h1V1h-1z"/>
+                                        <path d="M3 8.812a4.999 4.999 0 0 1 2.578-4.375l-.485-.874A6 6 0 1 0 11 3.616l-.501.865A5 5 0 1 1 3 8.812z"/>
+                                    </svg>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr> 
+                            <td>Movimiento</td>                       
+                        </tr>
+                        <tr>
+                            <td><div class="led2"></div></td>
+                            <td><div class="led2 colores" id="rojo"></div></td>
+                        </tr>
+
+
+                        <tr> 
+                            <td>Valvula</td>                      
+                        </tr>
+                        <tr>
+                            <td><div class="led2"></div></td>
+                            <td><div class="led2 colores" id="amarillo"></div></td>
+                        </tr>
+
+                        <tr> 
+                            <td>Sensor</td>                      
+                        </tr>
+                        <tr>
+                            <td><div class="led2"></div></td>
+                            <td><div class="led2 colores" id="verde"></div></td>
+                        </tr>
+                        <tr>
+                            <td><p></p></td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td><div class="led2 colores" id="azul"></div></td>
+                        </tr>
+                        
+                        
+                    </tbody>
+                </table>
+            </div>
+
+            <div id="columnchart_values"></div>
+
+            <div id="hiddeninfo"></div>
+
+            <div id="mobileButton">
+                <input type="button" id="botonMostrar" value="cambiar graph" >
+            </div>
+        </div>
+    </aside>
+
+    <!--ANIMACION-->
+    <aside id="right">
+        <div class="info2">
+
+            
+        
+                <div id="base">
+                    
+                       
+                            <div class="circulo" id="sensor"></div>
+        
+                            <div class="circulo" id="piezas"></div>
+                          
+                            <div class="circulo cinco dosuno" id="unouno"></div>
+                            <div class="circulo cinco dosdos" id="unodos"></div>
+                            <div class="circulo cinco dostres" id="unotres"></div>
+                            <div class="circulo cinco doscuatro" id="unocuatro"></div>
+                            <div class="circulo cinco doscinco" id="unocinco"></div>  
+                            
+                            <div class="circulo cuatro dosuno" id="dosuno"></div>
+                            <div class="circulo cuatro dosdos" id="dosdos"></div>
+                            <div class="circulo cuatro dostres" id="dostres"></div>
+                            <div class="circulo cuatro doscuatro" id="doscuatro"></div>
+                            <div class="circulo cuatro doscinco" id="doscinco"></div> 
+        
+                            <div class="circulo tres dosuno"></div>
+                            <div class="circulo tres dosdos" ></div>
+                            <div class="circulo tres dostres" ></div>
+                            <div class="circulo tres doscuatro"></div>
+                            <div class="circulo tres doscinco"></div> 
+        
+                            <div class="circulo dos dosuno"></div>
+                            <div class="circulo dos dosdos" ></div>
+                            <div class="circulo dos dostres" ></div>
+                            <div class="circulo dos doscuatro"></div>
+                            <div class="circulo dos doscinco"></div> 
+        
+                            <div class="circulo uno dosuno"></div>
+                            <div class="circulo uno dosdos" ></div>
+                            <div class="circulo uno dostres" ></div>
+                            <div class="circulo uno doscuatro"></div>
+                            <div class="circulo uno doscinco"></div> 
+        
+                        <div id="movimiento"><div id="valvula"></div></div>
+                </div>  
+           
+            <script src="./Animacion/Animacion.js"></script>
+
+        </div>
+    </aside> 
+     
+    <!--FOOTER-->
+    <footer>
+        <p>Willy Wonka Inc. | 2021</p>
+        <img alt="Licencia de Creative Commons" src="./licenciaCC.png" />
+    </footer>
+    <script src="./reto1.js"></script>
+    <!--  /////////////////////////////////////////////////////
+    //////////////////////////////////////////////////////  -->
+    
+   
+    
+</body>
+</html>

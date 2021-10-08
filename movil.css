@@ -1,0 +1,158 @@
+
+@media (max-width:400px){
+
+body {
+    overflow-y: scroll;
+    box-sizing: border-box;
+}
+
+/*HEADER*/
+header {
+    height: 4em;
+    overflow: auto;
+}
+
+header p {
+    font-size: 1.5em;
+    margin-left: 25%;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    display: inline-block;
+    text-align: center;
+}
+
+#logo{
+    width: 40%;
+}
+#imglogo{
+    margin-top: 0%;
+    margin-left: 0%;
+}
+
+#mainBotones {
+    display: none;
+}
+
+/*BODY*/
+#left {
+    float: none;
+    width: 100%;
+    padding:20px 0px;
+}
+
+#right {
+    float: none;
+    width: 100%;
+}
+
+.info {
+    margin-top: 0px;
+    margin-left: 5%;
+}
+
+.info2 {
+    margin-top: 0px;
+    padding-bottom: 90%;
+    width: 90%;
+}
+
+/* tabla */
+.styled-table {
+    font-size: 0.5em;
+    width: 60%;
+    position: static;
+    margin-top: 0px;
+    margin-left: 0px;  
+}
+
+.styled-table th,.styled-table td {
+    padding: 10px 13px;
+}
+
+/*PANEL DE LEDS*/
+#ledpanel{
+    margin-top: 10px;
+    position: relative;
+    margin-left: 2%;
+}
+
+#ledtable{
+    font-size: 0.5em;
+}
+
+.led{
+    height: .7em;
+    width: .7em;
+}
+
+.led2{
+    height: .7em;
+    width: .7em;
+}
+.colores{
+    width: 1.1pc;
+}
+
+#iniciarbtn{
+    width: 40px;
+    height: 40px;
+}
+
+#iniciarbtn svg {
+    width: 2.1pc;
+    height: 2.1pc;
+    margin-left: 6.5%;
+}
+
+/* GRAFICO */
+
+#columnchart_values{
+    margin-top: 130px;
+}
+
+#hiddeninfo{
+    width: 80%;
+    height: 50%;
+    margin-top: 130px;
+    margin-left: 10%;
+}
+
+#mobileButton {
+    display: block;
+    position: absolute;
+    bottom: 0px;
+    right: 0;
+    background-color: #382619;
+    float: right;
+    padding: 2px 2px 2px 1em;
+    border-top-left-radius: 1em;
+}
+
+#botonMostrar {
+    font-size: .5em;
+    float: right;
+    padding: 0;
+    background-color: #251000;
+    color: wheat;
+    border-color: #251000;
+    /*border-color: -internal-light-dark(
+        #140900,
+        #331700
+    );*/
+}
+
+/*FOOTER*/
+footer p {
+    font-size: .5em;
+    position: static;
+    width: 40%;
+    float: left;
+}
+
+footer img{
+    position: static;
+    height: 100%;
+    float: right;
+}
+
+}

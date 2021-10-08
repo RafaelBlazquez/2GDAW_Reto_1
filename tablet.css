@@ -1,0 +1,91 @@
+
+@media (min-width:400px) and (max-width:980px){
+    
+    body{
+        overflow-y: scroll;
+    }
+    
+    /*HEADER*/
+    header{
+        position: relative;
+    }
+    
+    header p{
+        width: 100%;
+        position: absolute;
+        display: inline-block;
+        font-size: 2.5em;
+        text-align: center;
+    }
+    
+    #logo{
+        width: 20%;
+    }
+    #imglogo{
+        display: inline-block;
+    }
+    
+    #mainBotones{
+        display: none;
+    }
+    
+    /*BODY*/
+    #left{
+        width: 100%;
+        position: relative;
+    }
+    
+    #right{ 
+        width: 100%;
+    }
+
+    .info{
+        margin-left: 5%;
+        position: absolute;
+        overflow-y: hidden;
+    }
+    
+    .info2{
+        padding-bottom:70%;
+        width: 70%;
+        margin-top: 35px;    
+    }
+    
+    /*TABLA*/
+    .styled-table {
+        width: 65%;
+    }
+
+    /*PANEL DE LEDS*/
+    #ledpanel{
+        width: 25%;
+        margin-left: 72%;
+    }
+
+    .led{
+        height: 0.6pc;
+        width: 0.6pc;
+    }
+    
+    #iniciarbtn svg {
+        margin-left: 1%;
+    }
+    
+    /* GRAFICO */
+    #columnchart_values{
+        margin-top: 320px;
+    }
+    
+    #hiddeninfo{
+        width: 30%;
+        height: 40%;
+        margin-left: 45%;
+        margin-top: 600px;
+    }
+    
+    /*FOOTER*/
+    footer{
+        height: 3%;
+    }
+}
+
