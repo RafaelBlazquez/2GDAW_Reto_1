@@ -1,70 +1,148 @@
+html{
+    height: 100%;
+    width: 100%;
+    margin: 0%;
+}
 
 @media (min-width:981px){
     body{
+        width: 100%;
+        height: 100%;
+        margin: 0;
+        background-color: black;
         overflow: hidden;
     }
 
     /*HEADER*/
     header{
+        height: 8%;
+        width: 100%;
+        background-color: rgb(46, 25, 6);
         position: relative;
     }
     
     header p{
         position: absolute;
+        font-size: 2.5pc;
+        color: wheat;
         margin-top: 0.5%;
+        font-family: 'Times New Roman', Times, serif;
         margin-left: 40%;
     }
-
     #logo{
+        display: block;
         width: 15%;
+        background-color: aqua;
+        position: relative;
     }
-
     #imglogo{
+        position: absolute;
         max-width: 30%;
+        margin-top: 3%;
+        margin-left: 10%;
+    }
+    #mainBotones{
+        width: 100%;
+        height: 31px;
+        background-color: rgb(46, 25, 6);
+    }
+    
+    #botones{
+        margin-left: 48%;
+        margin-right: auto;
+        width: auto;
+        position: absolute;
     }
 
+    #botones ul{
+        list-style: none;
+        margin: 0;
+        padding: 0px;
+    }
+    
+    #botones ul li{
+        display: inline-block;
+    }
+
+    #Bdatos{
+        background-color: rgb(106, 255, 47);
+        border: none;
+        border-radius: 0.5em;
+        box-shadow: 0px 0px 5px rgb(106, 255, 47);
+        opacity: 0.8;
+        outline: none;
+        margin-right: 20px;
+    }
+
+    #Banimacion{
+        background-color: rgb(106, 255, 47);
+        border: none;
+        border-radius: 0.5em;
+        box-shadow: 0px 0px 5px rgb(106, 255, 47);
+        opacity: 0.8;
+        outline: none;
+    }
+       
+    #Bdatos:hover{
+        opacity: 1;
+    }
+    
+    #Banimacion:hover{
+        opacity: 1;
+    }
+    
     /*BODY*/
+    #left{
+        float: left;
+        width: 50%;
+        height: 81%;
+        background-color: rgb(70, 54, 38);
+        transition: width 1.5s;
+    }
+    
+    #right{ 
+        float: left;
+        width: 50%;
+        height:81%;
+        background: wheat;
+        transition: width 1.5s;
+    }
 
     .info{
-        overflow-y: hidden;
+        height: 90%;
+        width: 90%;
+        margin-left: auto;
+        margin-right: auto;
+        background-color: white;
+        opacity: 0.85;
+        margin-top: 35px;
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+        position: relative;
+        overflow: hidden;
     }
     
     .info2{
+        height: 0%;
         padding-bottom:80%;
         width: 80%;
         max-width: 80%;
         max-height: 80%;
         margin: auto;
+        position: relative;
     }
     
-    
-       
-    /*TABLA*/
-    .styled-table {
-        width: 60%;        
-    }
-
-    /*PANEL DE LEDS*/
-    #ledpanel{
-        margin-left: 59%;
-    }
-
-    .led{
-        height: 0.8pc;
-        width: 0.8pc;
-    }
-
-    /* GRAFICO */
     #columnchart_values{
         width: 650px;
         max-width: 40%;
         height: 400px;
         max-height: 40%;
-        margin-left: 0px;
-        /*margin-top: 30%;*/
+        /*margin-left: 9%;
+        margin-top: 30%;*/
         position: relative;
         top: 51%;
         left: 9%;
+        opacity: 1;
+        transition: opacity 1s;
         display: inline-block;
     }
     
@@ -78,16 +156,145 @@
         position: relative;
         top: 51%;
         left: 9%;
+        opacity: 0;
+        transition: opacity 1s;
         display: inline-block;
     }
 
+    #mobileButton {
+        display: none;
+    }
+       
+    /*TABLA*/
+    .styled-table {
+        border-collapse: collapse;
+        font-size: 1.2pc;
+        font-family: sans-serif;
+        width: 60%;
+        height: auto;
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+        opacity: 1;
+        transition: opacity 0.85s;
+        position: absolute;
+        margin-top: 40px;
+        margin-left: 5%;
+        float: left;
+    }
+
+    .styled-table thead tr {
+        background-color: #412d02;
+        color: #ffffff;
+        text-align: left;
+    }
+    
+    .styled-table th,.styled-table td {
+        padding: 12px 15px;
+    }
+    
+    .styled-table tbody tr {
+        border-bottom: 1px solid #dddddd;
+    }
+    
+    .styled-table tbody tr {
+        background-color: #f3f3f3;
+    }
+
+    /*PANEL DE LEDS*/
+    #ledpanel{
+        width: 36%;
+        height: auto;
+        margin-top: 40px;
+        position: absolute;
+        float: right;
+        margin-left: 59%;
+    }
+
+    #ledtable{
+        margin: 0%;
+        text-align: center;
+        font-size: 1.2pc;
+        font-family: sans-serif;
+        width: 100%;
+        height: auto;
+    }
+
+    .led{
+        height: 0.8pc;
+        width: 0.8pc;
+        background: radial-gradient(circle, rgba(7,255,2,1) 38%, rgba(15,117,20,1) 92%);
+        box-shadow: 0 0 5px rgb(9, 197, 6);
+        border-radius: 50%;
+        display: inline-block;
+    }
+
+    .led2{
+        height: 1.2pc;
+        width: 1.2pc;
+        background: radial-gradient(circle, rgba(7,255,2,1) 38%, rgba(15,117,20,1) 92%);
+        box-shadow: 0 0 5px rgb(9, 197, 6);
+        border-radius: 50%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .colores{
+        border-radius: 0%;
+        width: 1.5pc;
+        background:radial-gradient(circle, rgba(87,87,87,1) 0%, rgba(50,50,50,1) 100%);
+        box-shadow: 0 0 0px rgb(9, 197, 6);
+    }
+    
+
+    #iniciarbtn{
+        height: 4pc;
+        width: 4pc;
+        background: radial-gradient(circle, rgba(87,87,87,1) 0%, rgba(50,50,50,1) 100%);
+        border-radius: 50%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    
+    #iniciarbtn svg {
+        width: 3.5pc;
+        height: 3.5pc;
+        fill: white;
+        margin-left: 2.5%;
+        margin-top: 3.5%;
+    }
     /*FOOTER*/
+    footer{
+        height: 6%;
+        width: 100%;
+        background-color: rgb(46, 25, 6);
+        display: inline-block;
+        position: relative;
+    }
+    
     footer p{
+        color:wheat;
+        font-size: 1.7pc;
+        font-family: 'Times New Roman', Times, serif;
+        position: absolute;
         margin-top: 0.75%;
+        margin-left: 2.4%;
     }
     
     footer img{
+        position: absolute;
+        right: 0;
         margin-top: 0.75%;
+        margin-right: 2.5%;
     }
+    
+    /*ANIMACION*/
+    @keyframes abajo{
+        from{
+            margin-top: 20px;
+    
+        }
+        to{
+            margin-top: 550px;
+        }
+    } 
+
 }
 
