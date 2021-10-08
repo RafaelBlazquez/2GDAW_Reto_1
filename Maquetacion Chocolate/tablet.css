@@ -220,6 +220,15 @@ html{
         margin-left: 1%;
         margin-top: 3.5%;
     }
+
+    #enviar{
+        opacity: 0;
+        position: absolute;
+        width: 3.85pc;
+        height: 3.85pc;
+        margin-left: -1.83pc;
+        border-radius: 50%;
+    }
     
     .styled-table thead tr {
         background-color: #412d02;

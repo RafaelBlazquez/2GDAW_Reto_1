@@ -199,6 +199,24 @@ footer img{
     margin-top: 3.5%;
 }
 
+
+#iniciarbtn svg {
+    width: 2.1pc;
+    height: 2.1pc;
+    fill: white;
+    margin-left: 2%;
+    margin-top: 3.5%;
+}
+
+#enviar{
+    opacity: 0;
+    position: absolute;
+    width: 3.85pc;
+    height: 3.85pc;
+    margin-left: -1.83pc;
+    border-radius: 50%;
+}
+
 /* grafico */
 
 #columnchart_values{
