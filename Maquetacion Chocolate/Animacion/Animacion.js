@@ -7,7 +7,7 @@ var arrayBlancos =['uno-blanco','dos-blanco','tres-blanco','cuatro-blanco','cinc
 var arrayNegros =['uno-negro','dos-negro','tres-negro','cuatro-negro','cinco-negro'];
 var contador=0;
 var contadorpreguntas=0;
-
+  var equis;
   var rojo =document.getElementById('rojo');
   var amarillo =document.getElementById('amarillo');
   var verde =document.getElementById('verde');
@@ -21,6 +21,22 @@ var contadorpreguntas=0;
   var ledPos3 = document.getElementById('ledPosX3');  
   var posOBJB = document.getElementById('posOBJB');  
   var posOBJN = document.getElementById('posOBJN');  
+  var grafico1 = document.getElementById("columnchart_values");
+  var grafico2 = document.getElementById("hiddeninfo");
+  var posX1;
+  var posX2;
+  var posX3;
+  var movimiento;
+  var currentpY;
+  var txokCogido;
+  var luzAmarilla;
+  var luzRoja;
+  var luzAzul;
+  var luzVerde;
+  var marcaBlanco;
+  var marcaNegro;
+  var chocolate;
+  var valvula; 
   
 //empieza aqui:
 window.onload = empezar();
@@ -38,18 +54,18 @@ function empezar(){
                 var datos=result;
                 var arrayDatos=datos.split(' ');
                 console.log(arrayDatos);
-                var currentpY = arrayDatos[0];
-                var posX1 = arrayDatos[1];
-                var posX2 = arrayDatos[2];
-                var posX3 = arrayDatos[3];
-                var movimiento = arrayDatos[4];
-                var txokCogido = arrayDatos[5];
-                var luzAmarilla = arrayDatos[6];
-                var luzRoja = arrayDatos[7];
-                var luzAzul = arrayDatos[8];
-                var luzVerde = arrayDatos[9];
-                var marcaBlanco = arrayDatos[10];
-                var marcaNegro = arrayDatos[11];
+                currentpY = arrayDatos[0];
+                posX1 = arrayDatos[1];
+                posX2 = arrayDatos[2];
+                posX3 = arrayDatos[3];
+                movimiento = arrayDatos[4];
+                txokCogido = arrayDatos[5];
+                luzAmarilla = arrayDatos[6];
+                luzRoja = arrayDatos[7];
+                luzAzul = arrayDatos[8];
+                luzVerde = arrayDatos[9];
+                marcaBlanco = arrayDatos[10];
+                marcaNegro = arrayDatos[11];
 
                 console.log('currentpY: '+ currentpY)
                 console.log('posX1: '+ posX1);
@@ -63,25 +79,33 @@ function empezar(){
                 console.log('luzVerde: '+ luzVerde);
                 console.log('marcaBlanco: '+ marcaBlanco);
                 console.log('marcaNegro: '+ marcaNegro);
+                
             });
         },1000);
         });
        
-        var chocolate = document.getElementById('chocolate');
+        
+      apareceValvula();
+      actualizaciones();
+      
+}
+function apareceValvula(){
+        chocolate = document.getElementById('chocolate');
         chocolate.style.visibility = 'hidden';
         chocolate.style.background = 'rgb(80, 76, 76)';
-        var valvula = document.getElementById('valvula');
+        valvula = document.getElementById('valvula');
         valvula.style.visibility = 'visible';
         chocolate.style.marginTop= '0%';
         chocolate.style.marginLeft='82%';
-
-        //Variables de prueba
-        
+}
+function actualizaciones(){
+      /*setInterval(posicionesX(),1000); 
+      setInterval(actualizarGrafico1(),1000);
+      setInterval(actualizarGrafico2(),1000);*/
       setInterval(actualizarLuces(),1000);
       setInterval(actualizarLeds(),1000);
       setInterval(actualizarTabla(),1000);
-}
-    
+  }
 function iniciarCiclo(){
     //mover valvula hasta el sensor
       irSensor();
@@ -248,6 +272,7 @@ function apagarLed(cual){
 
 function iniciar(){
   /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+  
   if(luzAmarilla){
     apagarLuces('amarillo');
     encenderLuces('verde');
@@ -258,7 +283,6 @@ function iniciar(){
   
   if(luzAmarilla) 
   window.setTimeout(habilitarIniciarBtn,13000);
-  
   }
   else{
     window.setTimeout(empezar,3000);
@@ -325,8 +349,9 @@ function actualizarLeds(){
     apagarLed('ledSensor');
   }
 }
+
 function actualizarTabla(){
-  posicionY.text(currentpY);
+  posicionY.innerHTML = currentpY;
   
   if(posX1){
     encenderLed('ledPos1');
@@ -346,6 +371,67 @@ function actualizarTabla(){
   else{
     apagarLed('ledPos3');
   }
-  posOBJB.text(posicionOBJB);
-  posOBJN.text(posicionOBJN);
+  posOBJB.innerHTML = posicionOBJB;
+  posOBJN.innerHTML = posicionOBJN;
 }
+/*function posicionesX(){
+  if(posX1)
+    equis =1;
+  if(posX2)
+    equis =2;
+  if(posX3)
+    equis =3;
+}
+function actualizarGrafico1(){
+  var data = google.visualization.arrayToDataTable([
+    ["Dato", "Valor", { role: "style" } ],
+    ["Posicion X", equis, "silver"],
+    ["Posicion Y", currentpY, "grey"],
+  ]);
+
+  var view = new google.visualization.DataView(data);
+  view.setColumns([0, 1,
+                   { calc: "stringify",
+                     sourceColumn: 1,
+                     type: "string",
+                     role: "annotation" },
+                   2]);
+
+  var options = {
+    title: "Datos Chocolates",
+    width: document.getElementById("infodiv").style.width*80/100,
+    height: document.getElementById("infodiv").style.height*50/100,
+    bar: {groupWidth: "95%"},
+    legend: { position: "none" },
+  };
+  var chart = new google.visualization.ColumnChart(document.getElementById("columnchart_values"));
+  chart.draw(view, options);
+}
+
+function actualizarGrafico2(){
+  var data = google.visualization.arrayToDataTable([
+    ["Dato", "Valor", { role: "style" } ],
+    ["Chocolate Blanco ", posicionOBJB, "silver"],
+    ["Chocolate Negro", posicionOBJN, "color: grey"],
+  ]);
+
+  var view = new google.visualization.DataView(data);
+  view.setColumns([0, 1,
+                   { calc: "stringify",
+                     sourceColumn: 1,
+                     type: "string",
+                     role: "annotation" },
+                   2]);
+
+
+  var options = {
+    title: "Datos Chocolates 2",
+    width: document.getElementById("infodiv").style.width*80/100,
+    height: document.getElementById("infodiv").style.height*50/100,
+    bar: {groupWidth: "95%"},
+    legend: { position: "none" },
+  };
+  var chart = new google.visualization.ColumnChart(document.getElementById("hiddeninfo"));
+  chart.draw(view, options);
+}
+*/
