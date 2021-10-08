@@ -4,7 +4,7 @@ html{
     margin: 0%;
 }
 
-@media (min-width:941px){
+@media (min-width:981px){
     body{
         width: 100%;
         height: 100%;
@@ -29,7 +29,18 @@ html{
         font-family: 'Times New Roman', Times, serif;
         margin-left: 40%;
     }
-    
+    #logo{
+        display: block;
+        width: 15%;
+        background-color: aqua;
+        position: relative;
+    }
+    #imglogo{
+        position: absolute;
+        max-width: 30%;
+        margin-top: 3%;
+        margin-left: 10%;
+    }
     #mainBotones{
         width: 100%;
         height: 31px;
@@ -71,6 +82,14 @@ html{
         opacity: 0.8;
         outline: none;
     }
+       
+    #Bdatos:hover{
+        opacity: 1;
+    }
+    
+    #Banimacion:hover{
+        opacity: 1;
+    }
     
     /*BODY*/
     #left{
@@ -88,15 +107,7 @@ html{
         background: wheat;
         transition: width 1.5s;
     }
-    
-    /*#datos:hover{
-        opacity: 1;
-    }
-    
-    #animacion2:hover{
-        opacity: 1;
-    }*/
-    
+
     .info{
         height: 90%;
         width: 90%;
@@ -112,9 +123,12 @@ html{
     
     .info2{
         height: 0%;
-    padding-bottom: 50%;
-    width: 50%;
-    position: absolute;
+        padding-bottom:80%;
+        width: 80%;
+        max-width: 80%;
+        max-height: 80%;
+        margin: auto;
+        position: relative;
     }
     
     #columnchart_values{
@@ -146,8 +160,11 @@ html{
         transition: opacity 1s;
         display: inline-block;
     }
-    
-    
+
+    #mobileButton {
+        display: none;
+    }
+       
     /*TABLA*/
     .styled-table {
         border-collapse: collapse;
@@ -181,10 +198,6 @@ html{
     .styled-table tbody tr {
         background-color: #f3f3f3;
     }
-    
-   /* .styled-table tbody tr:last-of-type {
-        border-bottom: 2px solid #412d02;
-    }*/
 
     /*PANEL DE LEDS*/
     #ledpanel{
@@ -223,12 +236,18 @@ html{
         margin-left: auto;
         margin-right: auto;
     }
+    .colores{
+        border-radius: 0%;
+        width: 1.5pc;
+        background:radial-gradient(circle, rgba(87,87,87,1) 0%, rgba(50,50,50,1) 100%);
+        box-shadow: 0 0 0px rgb(9, 197, 6);
+    }
+    
 
     #iniciarbtn{
         height: 4pc;
         width: 4pc;
         background: radial-gradient(circle, rgba(87,87,87,1) 0%, rgba(50,50,50,1) 100%);
-       
         border-radius: 50%;
         margin-left: auto;
         margin-right: auto;
@@ -238,8 +257,17 @@ html{
         width: 3.5pc;
         height: 3.5pc;
         fill: white;
-        margin-left: 6.5%;
+        margin-left: 2.5%;
         margin-top: 3.5%;
+    }
+
+    #enviar{
+        opacity: 0;
+        position: absolute;
+        width: 3.85pc;
+        height: 3.85pc;
+        margin-left: -1.83pc;
+        border-radius: 50%;
     }
     /*FOOTER*/
     footer{
@@ -267,16 +295,6 @@ html{
     }
     
     /*ANIMACION*/
-    /*#ejemplo{
-        margin-left:48%;
-        width: 40px;
-        height: 70px;
-        background-color: rgb(93, 48, 21);
-        animation-iteration-count: infinite;
-        animation-name: abajo;
-        animation-duration: 3s;
-    }
-    
     @keyframes abajo{
         from{
             margin-top: 20px;
@@ -285,7 +303,7 @@ html{
         to{
             margin-top: 550px;
         }
-    } */   
+    } 
 
 }
 

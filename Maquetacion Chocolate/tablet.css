@@ -4,7 +4,7 @@ html{
     margin: 0%;
 }
 
-@media (min-width:400px) and (max-width:940px){
+@media (min-width:400px) and (max-width:980px){
     
     body{
         width: 100%;
@@ -32,6 +32,20 @@ html{
         color: wheat;
         font-family: 'Times New Roman', Times, serif;
         margin-top: 3%;
+    }
+    
+    #logo{
+        display: block;
+        width: 20%;
+        background-color: aqua;
+        position: relative;
+    }
+    #imglogo{
+        position: absolute;
+        max-width: 40%;
+        margin-top: 3%;
+        margin-left: 10%;
+        display: inline-block;
     }
     
     #mainBotones{
@@ -68,41 +82,7 @@ html{
         background: wheat;
         transition: width 1.5s;
     }
-    
-    
-    #botones ul{
-        list-style: none;
-        margin: 0;
-    }
-    
-    #botones ul li{
-        display: inline-block;
-    }
-    
-    #datos{
-        background-color: rgb(106, 255, 47);
-        border: none;
-        border-radius: 0.5em;
-        box-shadow: 0px 0px 5px rgb(106, 255, 47);
-        opacity: 0.8;
-    }
-    
-    #animacion2{
-        background-color: rgb(106, 255, 47);
-        border: none;
-        border-radius: 0.5em;
-        box-shadow: 0px 0px 5px rgb(106, 255, 47);
-        opacity: 0.8;
-    }
-    
-    #datos:hover{
-        opacity: 1;
-    }
-    
-    #animacion2:hover{
-        opacity: 1;
-    }
-    
+
     .info{
         height: 90%;
         width: 90%;
@@ -112,13 +92,14 @@ html{
         margin-top: 35px;
         box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
         position: absolute;
-        overflow-y: scroll;
+        overflow-y: hidden;
         overflow-x: hidden;
     }
     
     .info2{
-        height: 90%;
-        width: 90%;
+        height: 0%;
+        padding-bottom:70%;
+        width: 70%;
         margin-left: auto;
         margin-right: auto;
         /*background-color: black;*/
@@ -126,7 +107,7 @@ html{
         margin-top: 35px;
         /*box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);*/
         position: relative;
-        overflow: hidden;
+        
     }
     
     #columnchart_values{
@@ -134,7 +115,7 @@ html{
         height: 50%;
         position: absolute;
         margin-left: 10%;
-        margin-top: 425px;
+        margin-top: 320px;
         opacity: 1;
         transition: opacity 1s;
     }
@@ -151,7 +132,6 @@ html{
     
     }
     
-    
     /*TABLA*/
     .styled-table {
         border-collapse: collapse;
@@ -163,6 +143,91 @@ html{
         opacity: 1;
         transition: opacity 0.85s;
         position: absolute;
+    }
+    
+    /*TABLA*/
+    .styled-table {
+        border-collapse: collapse;
+        font-size: 1.2pc;
+        font-family: sans-serif;
+        width: 65%;
+        height: auto;
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+        opacity: 1;
+        transition: opacity 0.85s;
+        position: absolute;
+        margin-top: 40px;
+        margin-left: 5%;
+        float: left;
+    }
+
+    #ledpanel{
+        width: 25%;
+        height: auto;
+        margin-top: 40px;
+        position: absolute;
+        float: right;
+        margin-left: 72%;
+    }
+
+    #ledtable{
+        margin: 0%;
+        text-align: center;
+        font-size: 1.2pc;
+        font-family: sans-serif;
+        width: 100%;
+        height: auto;
+    }
+
+    .led{
+        height: 0.6pc;
+        width: 0.6pc;
+        background: radial-gradient(circle, rgba(7,255,2,1) 38%, rgba(15,117,20,1) 92%);
+        box-shadow: 0 0 5px rgb(9, 197, 6);
+        border-radius: 50%;
+        display: inline-block;
+    }
+
+    .led2{
+        height: 1.2pc;
+        width: 1.2pc;
+        background: radial-gradient(circle, rgba(7,255,2,1) 38%, rgba(15,117,20,1) 92%);
+        box-shadow: 0 0 5px rgb(9, 197, 6);
+        border-radius: 50%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .colores{
+        border-radius: 0%;
+        width: 1.5pc;
+        background:radial-gradient(circle, rgba(87,87,87,1) 0%, rgba(50,50,50,1) 100%);
+        box-shadow: 0 0 0px rgb(9, 197, 6);
+    }
+
+    #iniciarbtn{
+        height: 4pc;
+        width: 4pc;
+        background: radial-gradient(circle, rgba(87,87,87,1) 0%, rgba(50,50,50,1) 100%); 
+        border-radius: 50%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    
+    #iniciarbtn svg {
+        width: 3.5pc;
+        height: 3.5pc;
+        fill: white;
+        margin-left: 1%;
+        margin-top: 3.5%;
+    }
+
+    #enviar{
+        opacity: 0;
+        position: absolute;
+        width: 3.85pc;
+        height: 3.85pc;
+        margin-left: -1.83pc;
+        border-radius: 50%;
     }
     
     .styled-table thead tr {
@@ -185,14 +250,6 @@ html{
     
     .styled-table tbody tr:last-of-type {
         border-bottom: 2px solid #412d02;
-    }
-    
-    .led{
-        height: 8px;
-        width: 8px;
-        background-color: rgb(106, 255, 47);
-        border: solid 0.5px black;
-        border-radius: 50%;
     }
     
     /*FOOTER*/

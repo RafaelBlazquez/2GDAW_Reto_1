@@ -1,126 +1,351 @@
 var style = window.document.styleSheets[0];
-var posX1 = true;
-var posX2 = false;
-var posX3 = false;
-
-var currentY = 0;
-var posicionOBJN = 0;
 var circulosNegros = [document.getElementById('unouno'),document.getElementById('unodos'),document.getElementById('unotres'),document.getElementById('unocuatro'),document.getElementById('unocinco')];
-console.log(circulosNegros);
-var posicionOBJB = 0;
+var posicionOBJN = 0;
 var circulosBlancos = [document.getElementById('dosuno'),document.getElementById('dosdos'),document.getElementById('dostres'),document.getElementById('doscuatro'),document.getElementById('doscinco')];
-console.log(circulosBlancos);
-var txokCogido = false;
+var posicionOBJB = 0;
 var arrayBlancos =['uno-blanco','dos-blanco','tres-blanco','cuatro-blanco','cinco-blanco'];
 var arrayNegros =['uno-negro','dos-negro','tres-negro','cuatro-negro','cinco-negro'];
 var contador=0;
 var contadorpreguntas=0;
-var truefalse=[0,0,1,1,0,1,1,0,1,0];
+
+  var rojo =document.getElementById('rojo');
+  var amarillo =document.getElementById('amarillo');
+  var verde =document.getElementById('verde');
+  var azul =document.getElementById('azul');  
+  var ledMovimiento = document.getElementById('ledMovimiento');  
+  var ledValvula = document.getElementById('ledValvula');  
+  var ledSensor = document.getElementById('ledSensor');  
+  var posicionY = document.getElementById('posicionY'); 
+  var ledPos1 = document.getElementById('ledPosX1');  
+  var ledPos2 = document.getElementById('ledPosX2');  
+  var ledPos3 = document.getElementById('ledPosX3');  
+  var posOBJB = document.getElementById('posOBJB');  
+  var posOBJN = document.getElementById('posOBJN');  
+  
 //empieza aqui:
 window.onload = empezar();
-
-window.addEventListener('resize', calculaAnimacion);
-
+  
 function empezar(){
-  calculaAnimacion();
+	 
+    //Recogida de variables
+	$(document).ready(function(){
+            
+        setInterval(function() {
+			
+            $.get("leerVariables.html", function(result){
+				      console.log(result);
+                $('#posX1').text(result.trim());
+                var datos=result;
+                var arrayDatos=datos.split(' ');
+                console.log(arrayDatos);
+                var currentpY = arrayDatos[0];
+                var posX1 = arrayDatos[1];
+                var posX2 = arrayDatos[2];
+                var posX3 = arrayDatos[3];
+                var movimiento = arrayDatos[4];
+                var txokCogido = arrayDatos[5];
+                var luzAmarilla = arrayDatos[6];
+                var luzRoja = arrayDatos[7];
+                var luzAzul = arrayDatos[8];
+                var luzVerde = arrayDatos[9];
+                var marcaBlanco = arrayDatos[10];
+                var marcaNegro = arrayDatos[11];
 
-  var movimiento = document.getElementById('movimiento');
-  movimiento.style.visibility = 'visible';
-  movimiento.style.background = 'rgb(80, 76, 76)';
-  var valvula = document.getElementById('valvula');
-  movimiento.style.marginTop= '0%';
-  movimiento.style.marginLeft='82%';
-  //condicion para saber si la valvula esta al inicio
-  /*Datos de prueba*/
-  posX3=true;
-  currentY=5;
-  if(posX3 && currentY ==5){
+                console.log('currentpY: '+ currentpY)
+                console.log('posX1: '+ posX1);
+                console.log('posX2: '+ posX2);
+                console.log('posX3: '+ posX3);
+                console.log('movimiento: '+ movimiento);
+                console.log('txokCogido: '+ txokCogido);
+                console.log('luzAmarilla: '+ luzAmarilla);
+                console.log('luzRoja: '+ luzRoja);
+                console.log('luzAzul: '+ luzAzul);
+                console.log('luzVerde: '+ luzVerde);
+                console.log('marcaBlanco: '+ marcaBlanco);
+                console.log('marcaNegro: '+ marcaNegro);
+            });
+        },1000);
+        });
+       
+        var chocolate = document.getElementById('chocolate');
+        chocolate.style.visibility = 'hidden';
+        chocolate.style.background = 'rgb(80, 76, 76)';
+        var valvula = document.getElementById('valvula');
+        valvula.style.visibility = 'visible';
+        chocolate.style.marginTop= '0%';
+        chocolate.style.marginLeft='82%';
 
-    //condicion para saber si la valvula esta en el sensor
-    /*Datos de prueba*/
-    posX2=true;
-    currentY=2;
-    if(posX2 && currentY ==2){
-
-      //mover valvula hasta el sensor
+        //Variables de prueba
+        
+      setInterval(actualizarLuces(),1000);
+      setInterval(actualizarLeds(),1000);
+      setInterval(actualizarTabla(),1000);
+}
+    
+function iniciarCiclo(){
+    //mover valvula hasta el sensor
       irSensor();
-      
-      //recibir datos sensor
-      /*truefalse y contador --> Datos de prueba*/
-      resultadoSensor= truefalse[contador];
+       //recibir datos sensor
 
-      if(resultadoSensor==0){
+       if(marcaBlanco){
         contador++;
         window.setTimeout(siguienteBlanco, 3000);
-      }
-      else{
+        window.setTimeout(transparente, 8000);
+        valvula.style.visibility= 'visible';
+       }
+       else{
+       if(marcaNegro){
         contador++;
-        console.log(contador);
         window.setTimeout(siguienteNegro, 3000);
-        
+        window.setTimeout(transparente, 8000);
+        valvula.style.visibility= 'visible';
+       }
       }
-      window.setTimeout(transparente,8000);
-      valvula.style.visibility= 'visible';
-    }
-  }
-  else{
-    window.setTimeout(empezar,500);
-    contadorpreguntas++;
-  }
-
-
 }
 
 function irSensor(){
-  movimiento.style.animationName = 'irSensor';
-  movimiento.style.animationDuration  ='3s';
+    chocolate.style.animationName = 'irSensor';
+    chocolate.style.animationDuration  ='3s';
 }
 
 function siguienteBlanco(){
-  movimiento.style.animationName =arrayBlancos[posicionOBJB];
-  movimiento.style.animationDuration  ='10s';
-  movimiento.style.background = 'wheat';
-  window.setTimeout(cambiarColorBlanco, 5000);
+    chocolate.style.animationName =arrayBlancos[posicionOBJB];
+    chocolate.style.animationDuration  ='10s';
+    chocolate.style.background = 'wheat';
+    window.setTimeout(cambiarColorBlanco, 5000);
 }
-function siguienteNegro(){
 
-  movimiento.style.animationName =arrayNegros[posicionOBJN];
-  movimiento.style.animationDuration  ='10s';
-  movimiento.style.background = 'rgb(100, 70, 40)';
-  window.setTimeout(cambiarColorNegro, 5000);
-}
 function cambiarColorBlanco(){
-  circulosBlancos[posicionOBJB].style.background = 'wheat';
-  posicionOBJB++;
-  
-  if(contador<=9)
-  window.setTimeout(empezar, 5000);
-
+    circulosBlancos[posicionOBJB].style.background = 'wheat';
+    posicionOBJB++;
+    if(contador<=9){
+      window.setTimeout(empezar, 5000);
+    }
 }
+
+function siguienteNegro(){
+    chocolate.style.animationName =arrayNegros[posicionOBJN];
+    chocolate.style.animationDuration  ='10s';
+    chocolate.style.background = 'rgb(100, 70, 40)';
+    window.setTimeout(cambiarColorNegro, 5000);
+}
+
 function cambiarColorNegro(){
-  circulosNegros[posicionOBJN].style.background = 'rgb(100, 70, 40)';
-  posicionOBJN++;
-  
-  if(contador<=9)
-  window.setTimeout(empezar, 5000);
+    circulosNegros[posicionOBJN].style.background = 'rgb(100, 70, 40)';
+    posicionOBJN++;
+    
+    if(contador<=9){
+    window.setTimeout(empezar, 5000);
+    }
 }
+
 function transparente(){
-  movimiento.style.visibility = 'hidden';
+    chocolate.style.visibility = 'hidden';
 }
 
+function noTransparente(){
+    chocolate.style.visibility = 'visible';
+}
 
-//Ajusta el tamaño de la animacion a las diferentes pantallas
-function calculaAnimacion(){
-  /*Calculo el alto*/
-  var animacionContenedorHeight=(window.screen.height*82)/100;//Height de right
-  animacionContenedorHeight=(animacionContenedorHeight*90)/100;//Height de info2
-  animacionContenedorHeight=(animacionContenedorHeight*96)/100;//Height calculado para base
-  document.getElementById("base").style.Height=animacionContenedorHeight + "px";
-  console.log("elemento" + document.getElementById("base"))
+function encenderLuces(color){
+  
+    switch(color){
+        case 'rojo':
+          rojo.style.background = ' radial-gradient(circle, rgb(255, 2, 2) 38%, rgb(117, 15, 15) 92%)';
+          rojo.style.boxShadow = ' 0 0 5px rgb(197, 6, 6)';
+          break;
+        case 'amarillo':
+            amarillo.style.background = 'radial-gradient(circle, rgb(255, 238, 2) 38%, rgb(117, 107, 15) 92%)';
+            amarillo.style.boxShadow = '0 0 5px rgb(197, 194, 6)';
+            break;
+        case 'verde':
+          verde.style.background = 'radial-gradient(circle, rgba(7,255,2,1) 38%, rgba(15,117,20,1) 92%)';
+          verde.style.boxShadow = '0 0 5px rgb(9, 197, 6)';
+          break;
+        case 'azul':
+          azul.style.background = 'radial-gradient(circle, rgb(2, 69, 255) 38%, rgb(15, 17, 117) 92%)';
+          azul.style.boxShadow = '0 0 5px rgb(9, 6, 197)';
+          break;
+    }
+}
 
-  /*Calculo el ancho*/
-  var animacionContenedorWidth=(window.screen.width*50)/100;//Width de right
-  animacionContenedorWidth = (animacionContenedorWidth*90)/100;//With de info2, es igual que el div contenedor (animacion)
-  animacionContenedorWidth = (animacionContenedorWidth*80)/100;//Width calculado para base
-  document.getElementById("base").style.Width=animacionContenedorHeight +"px";
+function encenderLed(cual){
+  
+  switch(cual){
+      case 'ledMovimiento':
+        ledMovimiento.style.background = 'radial-gradient(circle, rgba(7,255,2,1) 38%, rgba(15,117,20,1) 92%)';
+        ledMovimiento.style.boxShadow = '0 0 5px rgb(9, 197, 6)';
+        break;
+      case 'ledValvula':
+        ledValvula.style.background = 'radial-gradient(circle, rgba(7,255,2,1) 38%, rgba(15,117,20,1) 92%)';
+        ledValvula.style.boxShadow = '0 0 5px rgb(9, 197, 6)';
+        break;
+      case 'ledSensor':
+        ledSensor.style.background = 'radial-gradient(circle, rgba(7,255,2,1) 38%, rgba(15,117,20,1) 92%)';
+        ledSensor.style.boxShadow = '0 0 5px rgb(9, 197, 6)';
+        break;
+      case 'ledPos1':
+        ledPos1.style.background = 'radial-gradient(circle, rgba(7,255,2,1) 38%, rgba(15,117,20,1) 92%)';
+        ledPos1.style.boxShadow = '0 0 5px rgb(9, 197, 6)';
+        break;
+      case 'ledPos2':
+        ledPos2.style.background = 'radial-gradient(circle, rgba(7,255,2,1) 38%, rgba(15,117,20,1) 92%)';
+        ledPos2.style.boxShadow = '0 0 5px rgb(9, 197, 6)';
+        break;
+      case 'ledPos3':
+        ledPos3.style.background = 'radial-gradient(circle, rgba(7,255,2,1) 38%, rgba(15,117,20,1) 92%)';
+        ledPos3.style.boxShadow = '0 0 5px rgb(9, 197, 6)';
+        break;
+  }
+}
+
+function apagarLuces(color){
+  switch(color){
+      case 'rojo':
+          rojo.style = 'radial-gradient(circle, rgba(87,87,87,1) 0%, rgba(50,50,50,1) 100%)';
+          break;
+      case 'amarillo':
+          amarillo.style = 'radial-gradient(circle, rgba(87,87,87,1) 0%, rgba(50,50,50,1) 100%)';
+          break;
+      case 'verde':
+           verde.style = 'radial-gradient(circle, rgba(87,87,87,1) 0%, rgba(50,50,50,1) 100%)';
+          break;
+      case 'azul':
+          azul.style = 'radial-gradient(circle, rgba(87,87,87,1) 0%, rgba(50,50,50,1) 100%)';
+          break;
+  }
+}
+
+function apagarLed(cual){
+  
+  switch(cual){
+      case 'ledMovimiento':
+        ledMovimiento.style.background = 'radial-gradient(circle, rgba(87,87,87,1) 0%, rgba(50,50,50,1) 100%)';
+        ledMovimiento.style.boxShadow = '0 0 0px rgb(9, 197, 6)';
+        break;
+      case 'ledValvula':
+        ledValvula.style.background = 'radial-gradient(circle, rgba(87,87,87,1) 0%, rgba(50,50,50,1) 100%)';
+        ledValvula.style.boxShadow = '0 0 0px rgb(9, 197, 6)';
+        break;
+      case 'ledSensor':
+        ledSensor.style.background = 'radial-gradient(circle, rgba(87,87,87,1) 0%, rgba(50,50,50,1) 100%)';
+        ledSensor.style.boxShadow = '0 0 0px rgb(9, 197, 6)';
+        break;
+      case 'ledPos1':
+        ledPos1.style.background = 'radial-gradient(circle, rgba(87,87,87,1) 0%, rgba(50,50,50,1) 100%)';
+        ledPos1.style.boxShadow = '0 0 0px rgb(9, 197, 6)';
+        break;
+      case 'ledPos2':
+        ledPos2.style.background = 'radial-gradient(circle, rgba(87,87,87,1) 0%, rgba(50,50,50,1) 100%)';
+        ledPos2.style.boxShadow = '0 0 0px rgb(9, 197, 6)';
+        break;
+      case 'ledPos3':
+        ledPos3.style.background = 'radial-gradient(circle, rgba(87,87,87,1) 0%, rgba(50,50,50,1) 100%)';
+        ledPos3.style.boxShadow = '0 0 0px rgb(9, 197, 6)';
+        break;
+  }
+}
+
+function iniciar(){
+  /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+  if(luzAmarilla){
+    apagarLuces('amarillo');
+    encenderLuces('verde');
+    document.getElementById("iniciarbtn").style.background="radial-gradient(circle, rgba(7,255,2,1) 38%, rgba(15,117,20,1) 92%)";
+    noTransparente();
+    window.setTimeout(deshabilitarIniciarBtn,100);
+    iniciarCiclo();
+  
+  if(luzAmarilla) 
+  window.setTimeout(habilitarIniciarBtn,13000);
+  
+  }
+  else{
+    window.setTimeout(empezar,3000);
+    contadorpreguntas++;
+  }
+}
+
+function deshabilitarIniciarBtn(){
+  document.getElementById("iniciarbtn").style.background=" radial-gradient(circle, rgba(0,87,87,1) 0%, rgba(50,50,50,1) 100%)";
+  document.getElementById("iniciarbtn").style.visibility	='hidden';
+}
+
+function habilitarIniciarBtn(){
+  document.getElementById("iniciarbtn").style.background=" radial-gradient(circle, rgba(7,255,2,1) 38%, rgba(15,117,20,1) 92%)";
+  document.getElementById("iniciarbtn").style.visibility	='visible';
+  apagarLuces('verde');
+  encenderLuces('amarillo');
+}
+
+function actualizarLuces(){
+  if(luzRoja){
+    encenderLuces('rojo');
+  }
+  else{
+    apagarLuces('rojo');
+  }
+  if(luzAmarilla){
+    encenderLuces('amarillo');
+  }
+  else{
+    apagarLuces('amarillo');
+  }
+  if(luzVerde){
+    encenderLuces('verde');
+  }
+  else{
+    apagarLuces('verde');
+  }
+  if(luzAzul){
+    encenderLuces('azul');
+  }
+  else{
+    apagarLuces('azul');
+  }
+}
+
+function actualizarLeds(){
+  if(movimiento){
+    encenderLed('ledMovimiento');
+  }
+  else{
+    apagarLed('ledMovimiento');
+  }
+  if(txokCogido){
+    encenderLed('ledValvula');
+  }
+  else{
+    apagarLed('ledValvula');
+  }
+  if(marcaBlanco || marcaNegro){
+    encenderLed('ledSensor');
+  }
+  else{
+    apagarLed('ledSensor');
+  }
+}
+function actualizarTabla(){
+  posicionY.text(currentpY);
+  
+  if(posX1){
+    encenderLed('ledPos1');
+  }
+  else{
+    apagarLed('ledPos1');
+  }
+  if(posX2){
+    encenderLed('ledPos2');
+  }
+  else{
+    apagarLed('ledPos2');
+  }
+  if(posX3){
+    encenderLed('ledPos3');
+  }
+  else{
+    apagarLed('ledPos3');
+  }
+  posOBJB.text(posicionOBJB);
+  posOBJN.text(posicionOBJN);
 }
