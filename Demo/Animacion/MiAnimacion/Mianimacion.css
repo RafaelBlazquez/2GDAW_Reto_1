@@ -1,0 +1,175 @@
+div#contenedor{
+    width: 500px;
+    height: 500px;
+    left: 20px;
+    background-color: black;
+    position: absolute;
+    z-index: -2;
+}
+
+div#limite{
+    background-color: navy;
+    left: 225px;
+    width: 50px;
+    height: 20px;
+    position: absolute;
+    top: 200px;
+}
+
+div#limitesup{
+    background-color: navy;
+    left: 225px;
+    width: 50px;
+    height: 20px;
+    position: absolute;
+    top: 0px;
+}
+
+div#cinta{
+    background-color: gray;
+    left: 225px;
+    top: 20px;
+    width: 50px;
+    height: 200px;
+    position: absolute;
+    z-index: -1;
+}
+
+div#cintaizq{
+    background-color: gray;
+    left: 155px;
+    top: 180px;
+    width: 50px;
+    height: 200px;
+    position: absolute;
+    z-index: -1;
+    transform: rotate(45deg);
+}
+
+div#cintader{
+    background-color: gray;
+    left: 295px;
+    top: 180px;
+    width: 50px;
+    height: 200px;
+    position: absolute;
+    z-index: -1;
+    transform: rotate(-45deg);
+}
+
+div#chocolate{
+    background-color: white;
+    left: 240px;
+    top: 0px;
+    width: 20px;
+    height: 20px;
+    animation-name: abajo, rotizq,movizq;
+    animation-duration: 8s;
+    position: absolute;
+    animation-iteration-count: infinite;
+}
+div#chocolate2{
+    background-color: brown;
+    left:240px;
+    top: 0px;
+    width: 20px;
+    height: 20px;
+    animation-name: abajo,rotder,movder;
+    animation-duration: 8s;
+    position: absolute;
+    animation-iteration-count: infinite;
+    animation-delay: 2s;
+ 
+   
+}
+div#chocolate3{
+    background-color: white;
+    left:240px;
+    top: 0px;
+    width: 20px;
+    height: 20px;
+    animation-name: abajo,rotizq,movizq;
+    animation-duration: 8s;
+    position: absolute;
+    animation-iteration-count: infinite;
+    animation-delay: 4s;
+
+}
+div#chocolate4{
+    background-color: brown;
+    left:240px;
+    top: 0px;
+    width: 20px;
+    height: 20px;
+    animation-name: abajo,rotder,movder;
+    animation-duration: 8s;
+    position: absolute;
+    animation-iteration-count: infinite;
+    animation-delay: 6s;
+
+}
+@keyframes abajo{
+    from{
+        top: 0px;
+        display: none;
+        animation-timing-function: cubic-bezier(1,1,1,1);
+    }
+    to{
+        top: 400px;
+        display: none;
+    }
+}
+@keyframes abajo2{
+    from{
+        top: 17px;
+        display: none;
+        animation-timing-function: cubic-bezier(1,1,1,1);
+    }
+    to{
+        top: 417px;
+        display: none;
+    }
+}
+@keyframes rotizq{
+    50%{
+        transform: rotate(0deg);
+    }
+    51%{
+        transform: rotate(45deg);
+    }
+    100%{
+        transform: rotate(45deg);
+    }
+}
+@keyframes rotder{
+    50%{
+        transform: rotate(0deg);
+    }
+    51%{
+        transform: rotate(-45deg);
+    }
+    100%{
+        transform: rotate(-45deg);
+    }
+}
+@keyframes movizq {
+    50%{
+        left: 240px;
+        animation-timing-function: cubic-bezier(1,1,1,1);
+    }
+    100%{
+        left: 40px;
+    }
+    
+}
+
+@keyframes movder {
+    50%{
+        left: 240px;
+        animation-timing-function: cubic-bezier(1,1,1,1);
+    }
+    100%{
+        left: 440px;
+    }
+    
+}

@@ -1,0 +1,127 @@
+div#onza{
+    width: 20px;
+    height: 20px;
+    left: 240px;
+    background-color: rgb(131, 75, 38);
+    position: absolute;
+    animation-name: abajo;
+    animation-duration: 8s;
+}
+div .sombratopbot{
+    width: 14px;
+    height: 3px;
+    position: absolute;
+    animation-name: abajo;
+    animation-duration: 8s;
+}
+div#sombratop{
+    left: 243px;
+    background-color: rgb(170, 111, 72);
+    animation-name: abajo;
+    animation-duration: 8s;
+}
+
+div#sombrabot{
+    left: 243px;
+    top: 17px;
+    background-color: rgb(66, 40, 23);
+    z-index: 1;
+    animation-name: abajo2;
+    animation-duration: 8s;
+}
+
+div .sombralat{
+    width: 3px;
+    
+    height: 20px;
+    background-color: rgb(100, 65, 30);
+    position: absolute;
+    animation-name: abajo;
+    animation-duration: 8s;
+}
+
+div#sombraizq{
+    left: 240px;
+}
+div#sombrader{
+    left: 257px;
+}
+
+div .flechatop{
+    width:0px;
+    height:0px;
+    border-left:3px solid transparent; /* izquierda flecha */
+    border-right:3px solid transparent; /* derecha flecha */
+    font-size:0px;
+    line-height:0px;
+    position: absolute;
+  
+ }
+
+ div#flechaderarriba {
+    border-bottom:3px solid rgb(100, 65, 30); /* base flecha y color*/
+    left: 257px;
+    top: 0px; 
+    background-color: rgb(170, 111, 72);
+    animation-name: abajo;
+    animation-duration: 8s;
+}
+ div#flechaizqabajo {
+    border-bottom:3px solid rgb(66, 40, 23); /* base flecha y color*/
+    left: 240px;
+    top: 17px; 
+    background-color: rgb(100, 65, 30);
+    animation-name: abajo2;
+    animation-duration: 8s;
+ }
+div .flechabot{
+    width:0px;
+    height:0px;
+    border-left:3px solid transparent; /* izquierda flecha */
+    border-right:3px solid transparent; /* derecha flecha */
+    font-size:0px;
+    line-height:0px;
+    position: absolute;
+    animation-name: abajo;
+    animation-duration: 8s;
+}
+div#flechader {
+    border-bottom:3px solid rgb(100, 65, 30); /* base flecha y color*/
+    left: 237px;
+    top: 0px; 
+    background-color: rgb(170, 111, 72);
+    animation-name: abajo;
+    animation-duration: 8s;
+}
+ div#flechaizq {
+    border-bottom:3px solid rgb(66, 40, 23); /* base flecha y color*/
+    left: 254px;
+    top: 17px; 
+    background-color: rgb(100, 65, 30);
+    animation-name: abajo2;
+ }
+
+ div#tapa{
+    width: 3px;
+    height: 3px;
+    position: absolute;
+    background-color: gray;
+    top: 0px;
+    left: 237px;
+    z-index: 1;
+    animation-name: abajo;
+    animation-duration: 8s;
+ }
+
+ div#tapa2{
+    width: 3px;
+    height: 3px;
+    position: absolute;
+    background-color: gray;
+    top: 0px;
+    left:260px;
+    z-index: 1;
+    animation-name: abajo;
+    animation-duration: 8s;
+ }
+

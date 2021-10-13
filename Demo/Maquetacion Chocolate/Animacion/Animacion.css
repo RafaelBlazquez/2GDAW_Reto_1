@@ -1,0 +1,248 @@
+#base{
+    max-height: 520px;
+    max-width: 520px;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(47deg, rgba(180,180,180,1) 18%, rgba(156,156,156,1) 84%);
+    position: absolute;
+    box-shadow:  -3px 3px black;
+    border-radius: 5%;
+
+}
+div .circulo{
+        width: 15%;
+        height: 15%;
+        -moz-border-radius: 50%;
+        -webkit-border-radius: 50%;
+        border-radius: 50%;
+        background: radial-gradient(circle, rgba(131,126,126,1) 0%, rgba(106,96,96,1) 84%);
+        clear: left;
+        position: inherit;
+        box-shadow:  -1px 1px black;
+}
+div#movimiento{
+    width: 15%;
+    height: 15%;
+    -moz-border-radius: 50%;
+    -webkit-border-radius: 50%;
+    border-radius: 50%;
+       
+    position: inherit;
+    z-index: 2;
+    animation-fill-mode: forwards;
+    box-shadow:  -3px 3px  rgb(0, 0, 0);
+}
+div#valvula{
+    height: 40%;
+    width: 40%;
+    margin-top: 30%;
+    margin-left: 30%;
+    background-color: black;
+    position: inherit;
+    z-index: 3;
+    animation-fill-mode: forwards;
+    border-radius: 10%;
+}
+
+
+div .cinco{
+    margin-left: 2%;
+}
+div .cuatro{
+    margin-left: 22%;
+}
+div .tres{
+    margin-left: 42%;
+}
+div .dos{
+    margin-left: 62%;
+}
+div .uno{
+    margin-left: 82%;
+}
+
+div .doscinco{
+   margin-top: 16.5%;
+}
+div .doscuatro{
+    margin-top: 33%;
+}
+div .dostres{
+    margin-top: 49.5%;
+}
+div .dosdos{
+    margin-top: 66%;
+}
+div .dosuno{
+    margin-top: 82.5%;
+}
+div#sensor{
+    float: left;
+    margin-left: 22%;
+    clear: left;
+    position: inherit;
+   
+}
+div#piezas{
+    float: left;
+    margin-left: 82%;
+    clear: right;
+    position: inherit;
+    
+}
+
+
+@keyframes irSensor{
+    from{
+        margin-top:0%;
+        margin-left:82%;
+    }
+    to{
+        margin-top:0%;
+        margin-left:22%;
+    }
+}
+@keyframes uno-negro{
+    from{
+        margin-top:0%;
+        margin-left:22%;
+    }
+    50%{
+        margin-top:82.5%;
+        margin-left:2%;
+    }
+    to{
+        margin-top:0%;
+        margin-left:82%;
+    }
+}
+@keyframes dos-negro{
+    from{
+        margin-top:0%;
+        margin-left:22%;
+    }
+    50%{
+        margin-top:66%;
+        margin-left:2%;
+    }
+    to{
+        margin-top:0%;
+        margin-left:82%;
+    }
+}
+@keyframes tres-negro{
+    from{
+        margin-top:0%;
+        margin-left:22%;
+    }
+    50%{
+        margin-top:49.5%;
+        margin-left:2%;
+    }
+    to{
+        margin-top:0%;
+        margin-left:82%;
+    }
+}
+@keyframes cuatro-negro{
+    from{
+        margin-top:0%;
+        margin-left:22%;
+    }
+    50%{
+        margin-top:33%;
+        margin-left:2%;
+    }
+    to{
+        margin-top:0%;
+        margin-left:82%;
+    }
+}
+@keyframes cinco-negro{
+    from{
+        margin-top:0%;
+        margin-left:22%;
+    }
+    50%{
+        margin-top:16.5%;
+        margin-left:2%;
+    }
+    to{
+        margin-top:0%;
+        margin-left:82%;
+    }
+}
+
+@keyframes uno-blanco{
+    from{
+        margin-top:0%;
+        margin-left:22%;
+    }
+    50%{
+        margin-top:82.5%;
+        margin-left:22%;
+    }
+    to{
+        margin-top:0%;
+        margin-left:82%;
+    }
+}
+@keyframes dos-blanco{
+    from{
+        margin-top:0%;
+        margin-left:22%;
+    }
+    50%{
+        margin-top:66%;
+        margin-left:22%;
+    }
+    to{
+        margin-top:0%;
+        margin-left:82%;
+    }
+}
+@keyframes tres-blanco{
+    from{
+        margin-top:0%;
+        margin-left:22%;
+    }
+    50%{
+        margin-top:49.5%;
+        margin-left:22%;
+    }
+    to{
+        margin-top:0%;
+        margin-left:82%;
+    }
+}
+@keyframes cuatro-blanco{
+    from{
+        margin-top:0%;
+        margin-left:22%;
+    }
+    50%{
+        margin-top:33%;
+        margin-left:22%;
+    }
+    to{
+        margin-top:0%;
+        margin-left:82%;
+    }
+}
+@keyframes cinco-blanco{
+    from{
+        margin-top:0%;
+        margin-left:22%;
+    }
+    50%{
+        margin-top:16.5%;
+        margin-left:22%;
+    }
+    to{
+        margin-top:0%;
+        margin-left:82%;
+      
+    }
+}
+
+

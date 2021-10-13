@@ -1,0 +1,11 @@
+div#prueba {
+    position: absolute;
+    left: 700px;
+    width:0px;
+    height:0px;
+    border-left:25px solid transparent; /* izquierda flecha */
+    border-right:25px solid transparent; /* derecha flecha */
+    border-bottom:25px solid #0A0A0A; /* base flecha y color*/
+    font-size:0px;
+    line-height:0px;
+}
